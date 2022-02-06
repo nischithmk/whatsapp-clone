@@ -1,0 +1,135 @@
+/* Profile bar */
+body {
+  overflow: hidden;
+}
+.profilebar-container {
+  position: relative;
+  height: 70px;
+  width: 460px;
+  background-color: #202c35;
+  color: azure;
+}
+.profilebar-container img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.profilebar-container .status,
+.chat,
+.settings {
+  position: relative;
+  float: right;
+  top: 10px;
+  justify-content: space-between;
+  display: flex;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+/* chatlist */
+.chatlist-container {
+  position: relative;
+  width: 460px;
+  height: 100%;
+  background-color: #111b21;
+  color: white;
+}
+.searchBox {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  width: 430px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #202c35;
+  border: 0px;
+}
+.searchBox #icon {
+  position: relative;
+  left: 10px;
+  top: 3px;
+}
+
+.searchBox input {
+  position: relative;
+  height: 38px;
+  width: 400px;
+  background-color: #202c35;
+  border: 0px;
+  border-radius: 10px;
+  left: 20px;
+  color: aliceblue;
+  font-size: 15px;
+}
+.searchBox input:focus {
+  outline: none;
+}
+
+.allchats {
+  position: relative;
+  top: 20px;
+  height: 670px;
+  width: 460px;
+  border-top: 1px solid rgb(226, 230, 233, 0.2);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #202c35;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(104, 96, 96);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.singlechat_container {
+  position: relative;
+  height: 75px;
+  width: 460px;
+  background-color: #111b21;
+}
+.singlechat_container:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.singlechat_container img {
+  position: relative;
+  padding: 5px;
+  height: 60px;
+  width: 60px;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.singlechat_container .name {
+  position: relative;
+  left: 80px;
+  color: white;
+  height: 75px;
+  width: 80%;
+  top: -103px;
+  border-bottom: 1px solid rgb(226, 230, 233, 0.2);
+  z-index: 1;
+}
+
+.singlechat_container .name p {
+  position: relative;
+  top: 10px;
+  font-size: large;
+  opacity: 0.8;
+  left: 10px;
+  text-transform: capitalize;
+}
