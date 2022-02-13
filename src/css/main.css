@@ -1,7 +1,10 @@
 /* Profile bar */
 body {
-  overflow: hidden;
+  overflow: auto;
   color: #d1d7db;
+  /* max-width: 1080px; */
+  margin: 0;
+  padding: 0;
 }
 .profilebar-container {
   position: relative;
@@ -81,6 +84,7 @@ body {
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
+  height: 2px;
 }
 
 /* Track */
@@ -203,7 +207,7 @@ body {
 .ActiveProfile-container .activeProfile-Navbar {
   position: relative;
   top: 0px;
-  width: 100%;
+  width: 1100px;
   background-color: #202c33;
   height: 70px;
 }
@@ -218,32 +222,42 @@ body {
   border-radius: 50%;
 }
 
+.activeProfile-Navbar .name {
+  position: relative;
+  top: -65px;
+  left: 0px;
+  width: 900px;
+}
+
 .activeProfile-Navbar .name #name {
   position: relative;
   /* padding: 5px; */
-  top: -65px;
+  top: 0;
   left: 90px;
   color: azure;
   text-transform: capitalize;
   font-size: 18px;
   font-weight: bold;
+  width: 900px;
+  overflow: hidden;
 }
 .activeProfile-Navbar .name #online {
   position: relative;
   /* padding: 5px; */
-  top: -85px;
+  top: -20px;
   left: 91px;
   color: azure;
   font-size: 14px;
   opacity: 0.5;
+  width: 900px;
+  /* margin-right: auto; */
 }
 
 .activeProfile-Navbar .profile_icons {
   position: relative;
-
   justify-content: space-around;
   top: -150px;
-  left: 980px;
+  left: 0px;
   height: 100px;
   width: 100px;
   /* background-color: aqua; */
@@ -252,6 +266,12 @@ body {
 .activeProfile-Navbar .profile_icons #search {
   position: relative;
   top: 20px;
+  left: 980px;
+}
+.activeProfile-Navbar .profile_icons .settings {
+  position: relative;
+  top: 10px;
+  left: 980px;
 }
 
 /* Message bar  */
@@ -349,12 +369,13 @@ body {
 /* Messages */
 
 .message_container {
-  margin-left: 50px;
+  /* margin-left: 50px; */
   position: relative;
-  margin-right: 50px;
+  /* margin-right: 50px; */
   top: -131px;
   height: 651px;
   width: 1038px;
+  left: 50px;
   /* background-color: rgb(127, 145, 145); */
   overflow: auto;
   transform: rotateZ(180deg);
@@ -419,6 +440,14 @@ body {
   padding-left: 15px;
   opacity: 0.8;
 }
+.align-right .timestamp2 {
+  position: relative;
+  font-size: 12px;
+  top: 7px;
+  padding-top: 0px;
+  padding-left: 15px;
+  opacity: 0.8;
+}
 
 .timestamp .right_tick {
   position: relative;
@@ -429,7 +458,15 @@ body {
   color: #22b2f0;
   opacity: 1.5;
 }
-
+.timestamp2 .right_tick2 {
+  position: relative;
+  float: right;
+  left: 4px;
+  top: 2px;
+  padding: 0px;
+  color: #22b2f0;
+  opacity: 1.5;
+}
 .message {
   display: flex;
   transform: rotateX(180deg);
@@ -476,4 +513,128 @@ body {
   border-bottom: 0.5rem solid #0a6e59;
   transform-origin: 9.7px;
   transform: translateX(5.5px) rotate(45deg);
+}
+
+/* file upload  */
+.messagebar-container .box2 {
+  position: relative;
+  left: 60px;
+  height: 200px;
+  width: 30px;
+  background-color: transparent;
+  /* transition: 5s ease-in-out; */
+  animation: z 0.5s 1;
+  z-index: 1;
+  top: -170px;
+}
+.messagebar-container .box2:hover {
+  cursor: pointer;
+}
+
+.box2 svg {
+  animation: grow 0.5s 1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+@keyframes grow {
+  0% {
+    height: 0px;
+  }
+
+  100% {
+    /* transform: translateY(100%); */
+    height: 53px;
+  }
+}
+@keyframes z {
+  0% {
+    /* transform: translateY(0%); */
+    /* height: 0px; */
+    top: -100px;
+  }
+
+  100% {
+    /* transform: translateY(100%); */
+    top: -170px;
+  }
+}
+
+.box2 button {
+  background-color: transparent;
+  border: 0;
+  height: 55px;
+  width: 55px;
+}
+
+.fileUploaded {
+  position: absolute;
+  width: 1080px;
+  height: 645px;
+  background-color: #202c33;
+  overflow: auto;
+  top: -650px;
+  z-index: 1;
+}
+
+.fileUploaded img {
+  height: 600px;
+  width: 1080px;
+}
+.sendFileBackground {
+  height: 40px;
+  width: 1080px;
+  background-color: #202c33;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 25px;
+  opacity: 0.5;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.sendFileBackground:hover {
+  background-color: #6c9aad;
+}
+
+/* .webcam_container {
+  
+} */
+
+.webcam {
+  position: relative;
+  height: 600px;
+  width: 1100;
+  top: -800px;
+  z-index: 1;
+  position: absolute;
+  width: 1080px;
+  /* height: 645px; */
+  background-color: #202c33;
+  overflow: auto;
+  top: -650px;
+}
+
+.sendImageBackground {
+  position: relative;
+  top: -45px;
+  height: 20px;
+  width: 1080px;
+  background-color: #202c33;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 15px;
+  /* opacity: 0.5; */
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+.sendImageBackground:hover {
+  background-color: #6c9aad;
 }

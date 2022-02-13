@@ -12,7 +12,17 @@ function Messages() {
         .reverse()
         .map((chat) => {
           if (chat.id == PrfileID) {
-            const { id, message, time, timestamp, side } = chat;
+            const {
+              id,
+              message,
+              time,
+              timestamp,
+              side,
+              filename,
+              type,
+              type2,
+            } = chat;
+
             return (
               <div>
                 {id ? (
@@ -20,13 +30,36 @@ function Messages() {
                     <div className="rightside_message" key={timestamp}>
                       <div className="align-right message">
                         <div className="bubble right">
-                          {message}
-                          <div className="timestamp">
-                            {time}
-                            <div className="right_tick">
-                              <BsCheck2All size={19} />
+                          {type === "text" ? (
+                            message
+                          ) : (
+                            <img
+                              id="output"
+                              alt="output"
+                              style={{ width: "250px", height: "250px" }}
+                              src={
+                                type2 == "camera"
+                                  ? filename
+                                  : URL.createObjectURL(filename)
+                              }
+                            />
+                          )}
+
+                          {type === "file" ? (
+                            <div className="timestamp2">
+                              {time}
+                              <div className="right_tick2">
+                                <BsCheck2All size={19} />
+                              </div>
                             </div>
-                          </div>
+                          ) : (
+                            <div className="timestamp">
+                              {time}
+                              <div className="right_tick">
+                                <BsCheck2All size={19} />
+                              </div>
+                            </div>
+                          )}
                         </div>
                         <div className="triangle triangle-right"></div>
                       </div>
