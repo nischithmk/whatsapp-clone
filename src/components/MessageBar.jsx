@@ -7,6 +7,7 @@ import { RiAttachment2 } from "react-icons/ri";
 import Picker from "emoji-picker-react";
 import { BsEmojiSmile } from "react-icons/bs";
 import Webcam from "react-webcam";
+import users from "../data";
 
 function MessageBar() {
   function formatAMPM(date) {
@@ -55,10 +56,11 @@ function MessageBar() {
         timestamp: new Date().getTime().toString() + 1,
         id: PrfileID,
         side: "left",
+        latest: "Bot replying back",
       };
       chats.push(newMessage2);
     }
-
+    update_latest_message();
     setAllMessages([...allMessages]);
     setMessage("");
     setisEmojiOpen(false);
@@ -66,7 +68,6 @@ function MessageBar() {
   };
 
   const [file, setFile] = useState(null);
-  const [fileList, setFileList] = useState([]);
 
   const handleInput = (e) => {
     e.preventDefault();
@@ -89,6 +90,7 @@ function MessageBar() {
     setisFileBarOpen(false);
     setenableWebcam(false);
     setFile(null);
+    update_latest_message();
   };
 
   const inputFile = useRef(null);
@@ -135,7 +137,31 @@ function MessageBar() {
     setAllMessages([...allMessages]);
     setisFileBarOpen(false);
     setenableWebcam(false);
-    console.log(chats);
+    update_latest_message();
+  };
+
+  // latest message updating
+
+  const update_latest_message = () => {
+    for (var i = 0; i < chats.length; i++) {
+      latest_message(chats[i].id, chats[i].time, chats[i].type2);
+    }
+  };
+  var latest_message = (mId, mTime, mType) => {
+    for (let j = 0; j < users.length; j++) {
+      if (users[j].id == mId) {
+        if (mType == "camera") {
+          users[j].time = mTime;
+          users[j].latest_msg = "Image";
+        } else if (mType == "file") {
+          users[j].time = mTime;
+          users[j].latest_msg = "File";
+        } else {
+          users[j].time = mTime;
+          users[j].latest_msg = "Bot replying back";
+        }
+      }
+    }
   };
 
   return (

@@ -19,6 +19,12 @@ body {
   border-radius: 50%;
   margin-left: 15px;
   margin-top: 10px;
+  cursor: pointer;
+}
+.profilebar-container img:hover {
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
 }
 
 .profilebar-container .status,
@@ -31,6 +37,20 @@ body {
   display: flex;
   padding: 10px;
   margin-right: 10px;
+  cursor: pointer;
+}
+
+.profilebar-container .status:hover {
+  background-color: #36413e;
+  border-radius: 50%;
+}
+.profilebar-container .chat:hover {
+  background-color: #36413e;
+  border-radius: 50%;
+}
+.profilebar-container .settings:hover {
+  background-color: #36413e;
+  border-radius: 50%;
 }
 
 /* chatlist */
@@ -132,7 +152,7 @@ body {
   z-index: 1;
 }
 
-.singlechat_container .name p {
+.singlechat_container .name #login {
   position: relative;
   top: 10px;
   font-size: large;
@@ -140,7 +160,31 @@ body {
   left: 10px;
   text-transform: capitalize;
 }
-
+.singlechat_container .name #latest_msg {
+  position: relative;
+  top: -38px;
+  font-size: 15px;
+  opacity: 0.8;
+  left: 25px;
+  text-transform: capitalize;
+}
+.singlechat_container .name #time {
+  position: relative;
+  top: -110px;
+  font-size: small;
+  opacity: 0.8;
+  left: 300px;
+  text-transform: capitalize;
+}
+.singlechat_container .name #right_tick {
+  position: relative;
+  top: 2px;
+  font-size: small;
+  opacity: 0.8;
+  left: 0px;
+  color: #22b2f0;
+  text-transform: capitalize;
+}
 .MainChat-container {
   position: absolute;
   margin-left: 460px;
@@ -637,4 +681,543 @@ body {
 }
 .sendImageBackground:hover {
   background-color: #6c9aad;
+}
+
+/* sidebar */
+
+.sidebar {
+  position: absolute;
+  top: 14px;
+  left: 0px;
+}
+
+.fabar {
+  width: 100%;
+  margin: auto;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    /* transform: translateX(-100%); */
+    width: 0px;
+  }
+
+  100% {
+    /* transform: translateX(0); */
+    width: 460px;
+  }
+}
+
+.expanded_sidebar {
+  width: 460px;
+  height: 735px;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  background-color: #111b21;
+  overflow-x: hidden;
+  padding-top: 60px;
+  animation-name: slideInFromLeft;
+  animation-duration: 0.5s; /* or: Xms */
+  animation-iteration-count: 1;
+  animation-direction: normal; /* or: normal */
+  animation-timing-function: ease; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+  animation-fill-mode: forwards; /* or: backwards, both, none */
+  animation-delay: 0s;
+}
+.expanded_sidebar .close_button {
+  background-color: #202c33;
+  position: relative;
+  top: -85px;
+  height: 130px;
+}
+.close_button .closeIcon {
+  position: relative;
+  top: 80px;
+  left: 50px;
+  cursor: pointer;
+}
+.close_button p {
+  position: relative;
+  top: 19px;
+  left: 105px;
+  font-size: x-large;
+}
+.contents img {
+  position: relative;
+  height: 280px;
+  width: 280px;
+  left: 70px;
+  top: -50px;
+  border-radius: 50%;
+  animation: imagepopup 0.5s 1;
+}
+.contents #yourName {
+  position: relative;
+  color: rgb(31, 163, 119);
+  font-size: 16px;
+  left: 40px;
+  top: -20px;
+}
+.contents #name {
+  position: relative;
+  font-size: 20px;
+  left: 40px;
+  top: -30px;
+}
+.contents #warinng {
+  position: relative;
+  font-size: 14px;
+  left: 40px;
+  top: -30px;
+  word-wrap: break-word;
+  opacity: 0.8;
+}
+.contents #about {
+  position: relative;
+  color: rgb(31, 163, 119);
+  font-size: 16px;
+  left: 40px;
+  top: -20px;
+}
+.contents #about2 {
+  position: relative;
+  font-size: 20px;
+  left: 40px;
+  top: -20px;
+}
+.contents2 img {
+  position: relative;
+  height: 280px;
+  width: 280px;
+  left: 70px;
+  top: -50px;
+  border-radius: 50%;
+  transition: 0.1s ease-out;
+}
+
+@keyframes imagepopup {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+
+  100% {
+    width: 280px;
+    height: 280px;
+  }
+}
+@keyframes slideOutToLeft {
+  0% {
+    width: 460px;
+  }
+
+  100% {
+    width: 0px;
+  }
+}
+.closingBar {
+  width: 460px;
+  height: 735px;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  background-color: #111b21;
+  overflow-x: hidden;
+  padding-top: 60px;
+  animation-name: slideOutToLeft;
+  animation-duration: 0.4s; /* or: Xms */
+  animation-iteration-count: 1;
+  animation-direction: normal; /* or: normal */
+  animation-timing-function: ease; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
+  animation-fill-mode: forwards; /* or: backwards, both, none */
+  animation-delay: 0s;
+}
+
+.status_sidebar {
+  height: 792px;
+  position: absolute;
+  width: 400px;
+  top: 0px;
+  background-color: #1f2a31;
+}
+.status_sidebar img {
+  position: relative;
+  top: -70px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  left: 15px;
+}
+.status_sidebar #my_status {
+  position: relative;
+  left: 90px;
+  top: 20px;
+  font-size: 22px;
+  font-weight: 400;
+}
+.status_sidebar #no_update {
+  position: relative;
+  left: 90px;
+  top: 0px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.status_sidebar .line {
+  position: relative;
+  top: -45px;
+  width: 370px;
+  height: 2px;
+  left: 10px;
+  background-color: #424a4e;
+  opacity: 0.5;
+}
+
+.status_Mainbar {
+  margin-left: 400px;
+  background-color: #1b2b35;
+  width: 1140px;
+  height: 792px;
+  position: absolute;
+  top: 0px;
+  overflow: hidden;
+}
+.status_Mainbar #cancel {
+  position: relative;
+  left: 1090px;
+  top: 3px;
+  cursor: pointer;
+}
+.status_Mainbar #cancel:hover {
+  background-color: #525f5c;
+  border-radius: 10%;
+}
+
+/* status page box */
+
+.dummy {
+  position: absolute;
+  height: 450px;
+  width: 250px;
+  left: 50px;
+  top: 150px;
+  visibility: hidden;
+  background-color: #1f2a31;
+
+  animation: slideLeft1 0.5s forwards;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+.one {
+  position: absolute;
+  height: 450px;
+  width: 250px;
+  left: 50px;
+  top: 150px;
+  background-color: #1f2a31;
+
+  animation: slideLeft1 0.5s forwards;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+@keyframes slideLeft1 {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 0.5;
+    height: 450px;
+    width: 250px;
+    left: 850px;
+    top: 150px;
+  }
+}
+
+.one2 {
+  position: absolute;
+  height: 450px;
+  width: 250px;
+  left: 850px;
+  top: 150px;
+  animation: slideLeft11 0.5s forwards;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+@keyframes slideLeft11 {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 0.5;
+    height: 450px;
+    width: 250px;
+    left: 50px;
+    top: 150px;
+  }
+}
+
+.one > video {
+  position: relative;
+  height: 450px;
+  width: 250px;
+}
+.one2 > video {
+  position: relative;
+  height: 450px;
+  width: 250px;
+}
+.three2 > video {
+  position: relative;
+  height: 450px;
+  width: 250px;
+}
+.two > video {
+  position: relative;
+  height: 450px;
+  width: 250px;
+}
+.three > video {
+  position: relative;
+  height: 100px;
+  animation: slideLeftImg2 0.5s forwards;
+  opacity: 1;
+  z-index: 5;
+}
+
+@keyframes slideLeftImg2 {
+  0% {
+    background-color: #1f2a31;
+    width: 250px;
+    height: 250px;
+  }
+  100% {
+    background-color: #1f2a31;
+    opacity: 1;
+    height: 700px;
+    width: 450px;
+    left: 0px;
+  }
+}
+.two2 > video {
+  position: relative;
+  height: 100px;
+  animation: slideLeftImg 0.5s forwards;
+  opacity: 1;
+  z-index: 5;
+}
+@keyframes slideLeftImg {
+  0% {
+    background-color: #1f2a31;
+    width: 250px;
+    height: 250px;
+  }
+  100% {
+    background-color: #1f2a31;
+    opacity: 1;
+    height: 700px;
+    width: 450px;
+  }
+}
+
+.two {
+  position: relative;
+  height: 650px;
+  width: 450px;
+  left: 350px;
+  top: 50px;
+  animation: slideLeft2 0.5s forwards;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+@keyframes slideLeft2 {
+  0% {
+    height: 0;
+    width: 0;
+  }
+
+  100% {
+    opacity: 0.5;
+    height: 450px;
+    width: 250px;
+    left: 50px;
+    top: 100px;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.two2 {
+  position: relative;
+  height: 450px;
+  width: 250px;
+  left: 50px;
+  animation: slideLeft22 0.5s forwards;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+@keyframes slideLeft22 {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 700px;
+    width: 450px;
+    left: 350px;
+  }
+}
+
+.three {
+  position: absolute;
+  height: 450px;
+  width: 250px;
+  left: 850px;
+  top: 150px;
+  text-shadow: 0 0.1rem 1rem #000;
+  animation: slideLeft3 0.5s forwards;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+@keyframes slideLeft3 {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 650px;
+    width: 450px;
+    left: 350px;
+    top: 50px;
+  }
+}
+.three2 {
+  position: absolute;
+  height: 650px;
+  width: 450px;
+  left: 350px;
+  top: 50px;
+  text-shadow: 0 0.1rem 1rem #000;
+  animation: slideLeft33 0.5s forwards;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+@keyframes slideLeft33 {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 0.5;
+    height: 450px;
+    width: 250px;
+    left: 850px;
+    top: 150px;
+  }
+}
+
+/* image name and time displaying inside video */
+
+.status_Mainbar .left_arrow {
+  position: relative;
+  top: 370px;
+  left: 290px;
+  z-index: 5;
+}
+.left_arrow:hover {
+  color: #6c9aad;
+  cursor: pointer;
+
+  box-shadow: rgba(177, 223, 14, 0.911) 0px 30px 60px -12px,
+    rgb(243, 4, 4) 0px 18px 36px -18px;
+}
+.status_Mainbar .right_arrow {
+  position: relative;
+  top: 370px;
+  left: 760px;
+  z-index: 5;
+}
+.right_arrow:hover {
+  color: #6c9aad;
+  cursor: pointer;
+  box-shadow: rgba(177, 223, 14, 0.911) 0px 30px 60px -12px,
+    rgb(243, 4, 4) 0px 18px 36px -18px;
+}
+
+/* status sidebar */
+
+.allstatus {
+  position: relative;
+  top: 150px;
+  height: 640px;
+  width: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 2;
+}
+.singleStatus_container {
+  position: relative;
+  height: 75px;
+  width: 460px;
+  background-color: #1f2a31;
+  box-shadow: 0 4px 8px 0 rgba(27, 26, 26, 0.2),
+    0 6px 20px 0 rgba(128, 120, 120, 0.19);
+  cursor: pointer;
+}
+
+.singleStatus_container:active {
+  background-color: rgb(45, 73, 67);
+}
+
+.singleStatus_container img {
+  position: relative;
+  height: 55px;
+  width: 55px;
+  top: 7px;
+  left: 6px;
+  border-radius: 50%;
+}
+
+.singleStatus_container .circle {
+  position: absolute;
+  top: 4.1px;
+  left: 3px;
+  /* z-index: 10; */
+}
+.singleStatus_container .name {
+  position: relative;
+  left: 80px;
+  color: white;
+  height: 75px;
+  width: 80%;
+  top: -77px;
+  border-bottom: 1px solid rgb(226, 230, 233, 0.1);
+  z-index: 1;
+}
+
+.singleStatus_container .name #login {
+  position: relative;
+  top: 10px;
+  font-size: large;
+  opacity: 0.8;
+  left: 10px;
+  text-transform: capitalize;
+}
+
+.singleStatus_container .name #time {
+  position: relative;
+  top: -75px;
+  font-size: 14px;
+  opacity: 0.7;
+  left: 10px;
+  text-transform: capitalize;
+  color: aliceblue;
+  z-index: 100;
 }

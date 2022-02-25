@@ -1,13 +1,9 @@
-import React, {
-  useEffect,
-  useState,
-  useContext,
-  useRef,
-  useCallback,
-} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import users from "../data.js";
+import chats from "../chats.js";
+import { BsCheck2All } from "react-icons/bs";
 
 function ChatList() {
   let navigate = useNavigate();
@@ -18,17 +14,17 @@ function ChatList() {
     e.preventDefault();
     setSearchName(e.target.value);
   };
-
   const SingleChat = () => {
     const { PrfileID } = useParams();
     return (
       <div className="allchats">
+        {/* User Searching functionality Begins here */}
+
         {searchName ? (
           <div>
             {users.map((user) => {
               if (user.login.includes(searchName)) {
-                const { id, login, avatar_url, url } = user;
-                console.log("hey");
+                const { id, login, avatar_url, time, latest_msg } = user;
                 return (
                   <div
                     key={id + 12156}
@@ -52,7 +48,12 @@ function ChatList() {
                   >
                     <img src={avatar_url} alt={login} />
                     <div className="name">
-                      <p>{login}</p>
+                      <p id="login">{login}</p>
+                      <p id="right_tick">
+                        <BsCheck2All size={18} />
+                      </p>
+                      <p id="latest_msg">{latest_msg || "Demo message"}</p>
+                      <p id="time">{time || "7:08pm"}</p>
                     </div>
                   </div>
                 );
@@ -62,7 +63,7 @@ function ChatList() {
         ) : (
           <div>
             {users.map((user) => {
-              const { id, login, avatar_url, url } = user;
+              const { id, login, avatar_url, time, latest_msg } = user;
               return (
                 <div
                   key={id}
@@ -86,13 +87,19 @@ function ChatList() {
                 >
                   <img src={avatar_url} alt={login} />
                   <div className="name">
-                    <p>{login}</p>
+                    <p id="login">{login}</p>
+                    <p id="right_tick">
+                      <BsCheck2All size={18} />
+                    </p>
+                    <p id="latest_msg">{latest_msg || "Demo message"}</p>
+                    <p id="time">{time || "7:08pm"}</p>
                   </div>
                 </div>
               );
             })}
           </div>
         )}
+        {/* User Searching functionality Ends here */}
       </div>
     );
   };
