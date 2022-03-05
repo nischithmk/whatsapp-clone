@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import chats from "../chats.js";
 import { useParams } from "react-router-dom";
 import { BsCheck2All } from "react-icons/bs";
+import { Helmet } from "react-helmet";
 
-function Messages() {
+function Messages({ isprofileClicked }) {
   const { PrfileID } = useParams();
   return (
     <>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React app</title>
+        <meta name="description" content="React application" />
+      </Helmet>
       {chats
         .slice(0)
         .reverse()
@@ -83,7 +89,7 @@ function Messages() {
           }
         })}
 
-      <div>
+      <div className="rightleft_message_containter">
         <div className="rightside_message" key="164432">
           <div className="align-right message">
             <div className="bubble right">

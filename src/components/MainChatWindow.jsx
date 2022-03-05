@@ -3,30 +3,74 @@ import { useParams } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import users from "../data.js";
 import MessageBar from "./MessageBar";
+import { Helmet } from "react-helmet";
+import ChatProfileView from "./ChatProfileView";
 
 function MainChatWindow() {
   const { PrfileID } = useParams();
-  const [chatActive, setChatActive] = useState(false);
+  const [isprofileClicked, setisprofileClicked] = useState(false);
 
   const IschatActive = () => {
     return (
-      <div className="ActiveProfile-container">
+      <div
+        className={
+          isprofileClicked
+            ? "ActiveProfile-container2"
+            : "ActiveProfile-container"
+        }
+        // style={{
+        //   width: isprofileClicked ? "50%" : "100%",
+        //   transition: "  1s",
+        // }}
+      >
+        <Helmet>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>React app</title>
+          <meta name="description" content="React application" />
+        </Helmet>
         {users.map((user) => {
           if (user.id == PrfileID) {
             return (
-              <div key={user.id} className="activeProfile-Navbar">
+              <div
+                key={user.id}
+                className={
+                  isprofileClicked
+                    ? "activeProfile-Navbar2"
+                    : "activeProfile-Navbar"
+                }
+                onClick={() => setisprofileClicked(!isprofileClicked)}
+                // style={{
+                //   width: isprofileClicked ? "610px" : "100%",
+                //   transition: "  1s",
+                // }}
+              >
                 <img src={user.avatar_url} alt="profilepic" />
                 <div className="name">
                   <p id="name"> {user.login}</p>
                   <p id="online">online</p>
                 </div>
                 <div className="profile_icons">
-                  <AiOutlineSearch size={28} id="search" />
+                  <AiOutlineSearch
+                    size={28}
+                    id={isprofileClicked ? "search2" : "search"}
+                    // style={{
+                    //   left: isprofileClicked ? "450px" : "60vw",
+                    //   transition: "  1s",
+                    // }}
+                  />
                   <svg
                     viewBox="0 0 24 24"
                     width="30"
                     height="30"
-                    className="settings"
+                    className={isprofileClicked ? "settings2" : "settings"}
+                    // style={{
+                    //   left: isprofileClicked ? "490px" : "65vw",
+                    //   top: "-20px",
+                    //   transition: "  1s",
+                    // }}
                   >
                     <path
                       fill="currentColor"
@@ -38,7 +82,13 @@ function MainChatWindow() {
             );
           }
         })}
-        <MessageBar />
+        <MessageBar isprofileClicked={isprofileClicked} />
+        {isprofileClicked ? (
+          <ChatProfileView
+            isprofileClicked={isprofileClicked}
+            setisprofileClicked={setisprofileClicked}
+          />
+        ) : null}
       </div>
     );
   };
@@ -46,6 +96,14 @@ function MainChatWindow() {
   const IsChatinACtive = () => {
     return (
       <div className="MainChat-container">
+        <Helmet>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>React app</title>
+          <meta name="description" content="React application" />
+        </Helmet>
         <div className="logo">
           <svg
             width="400"

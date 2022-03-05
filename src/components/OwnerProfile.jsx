@@ -2,11 +2,17 @@ import React, { Component } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import profilePic from "../images/profile.jpeg";
+import { Helmet } from "react-helmet";
 
 const OwnerProfileSideBar = (props) => {
   console.log(props.sidebar);
   return (
     <div className="expanded_sidebar">
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React app</title>
+        <meta name="description" content="React application" />
+      </Helmet>
       <div className="close_button" onClick={() => props.closeSideBar(false)}>
         <h4>
           <HiArrowNarrowLeft size={31} className="closeIcon" />
@@ -32,6 +38,11 @@ const OwnerProfileCloisngSideBar = (props) => {
   console.log(props.sidebar);
   return (
     <div className="closingBar">
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React app</title>
+        <meta name="description" content="React application" />
+      </Helmet>
       <div className="close_button" onClick={() => props.closeSideBar(false)}>
         <h4>
           <HiArrowNarrowLeft size={31} className="closeIcon" />

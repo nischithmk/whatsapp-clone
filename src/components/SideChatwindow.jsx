@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ProfileBar from "./ProfileBar";
 import ChatList from "./ChatList";
+import { Helmet } from "react-helmet";
+
 import {
   OwnerProfileSideBar,
   OwnerProfileCloisngSideBar,
@@ -11,6 +13,11 @@ function SideChatWindow() {
 
   return (
     <div>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React app</title>
+        <meta name="description" content="React application" />
+      </Helmet>
       {sidebar ? (
         <OwnerProfileSideBar sidebar={sidebar} closeSideBar={showsidebar} />
       ) : (

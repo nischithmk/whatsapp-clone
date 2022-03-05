@@ -5,11 +5,12 @@ import { useParams } from "react-router-dom";
 import { IoSendSharp } from "react-icons/io5";
 import { RiAttachment2 } from "react-icons/ri";
 import Picker from "emoji-picker-react";
-import { BsEmojiSmile } from "react-icons/bs";
+import { BsEmojiSmile, BsSlack } from "react-icons/bs";
 import Webcam from "react-webcam";
 import users from "../data";
+import { Helmet } from "react-helmet";
 
-function MessageBar() {
+function MessageBar({ isprofileClicked }) {
   function formatAMPM(date) {
     var hours = date.getHours();
     var minutes = date.getMinutes();
@@ -166,7 +167,23 @@ function MessageBar() {
 
   return (
     <>
-      <div className="messagebar-container">
+      <div
+        className={
+          isprofileClicked ? "messagebar-container2" : "messagebar-container"
+        }
+        // style={{
+        //   width: isprofileClicked ? "610px" : "100vw",
+        //   transition: "  1s",
+        // }}
+      >
+        <Helmet>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <title>React app</title>
+          <meta name="description" content="React application" />
+        </Helmet>
         {enableWebcam ? (
           <div className="webcam_container">
             <Webcam
@@ -180,7 +197,10 @@ function MessageBar() {
             </div>
             <div
               className="sendImageBackground"
-              onClick={() => setenableWebcam(false)}
+              onClick={() => {
+                setenableWebcam(false);
+                setisFileBarOpen(!isFileBarOpen);
+              }}
             >
               Cancel
             </div>
@@ -316,11 +336,16 @@ function MessageBar() {
           <input
             type="text"
             name="message"
-            id="message"
+            id={isprofileClicked ? "message2" : "message"}
             placeholder="Type a message"
             value={message}
             onChange={handleChange}
             autoComplete="off"
+            // style={{
+            //   width: isprofileClicked ? "360px" : "50vw",
+            //   left: "115px",
+            //   transition: "  1s",
+            // }}
           />
           <RiAttachment2
             size={35}
@@ -338,17 +363,27 @@ function MessageBar() {
           />
           <IoSendSharp
             type="submit"
-            className="send"
+            className={isprofileClicked ? "send2" : "send"}
             onClick={handleSubmit}
             size={38}
+            // style={{
+            //   left: isprofileClicked ? "550px" : "65vw",
+            //   transition: "  1s",
+            // }}
           />
         </form>
       </div>
 
-      <div className="message_container">
-        {/* ref={messageEl} */}
-        <Messages />
-        {/* <p ref={messagesEndRef} /> */}
+      <div
+        className={
+          isprofileClicked ? "message_container2" : "message_container"
+        }
+        // style={{
+        //   width: isprofileClicked ? "558px" : "1028px",
+        //   transition: "  1s",
+        // }}
+      >
+        <Messages isprofileClicked={isprofileClicked} />
       </div>
     </>
   );

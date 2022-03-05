@@ -4,6 +4,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import users from "../data.js";
 import chats from "../chats.js";
 import { BsCheck2All } from "react-icons/bs";
+import { Helmet } from "react-helmet";
 
 function ChatList() {
   let navigate = useNavigate();
@@ -18,10 +19,26 @@ function ChatList() {
     const { PrfileID } = useParams();
     return (
       <div className="allchats">
+        <Helmet>
+          <meta
+            name="viewport"
+            content="width=device-width, minimum-scale=1.0"
+          />
+          <title>React app</title>
+          <meta name="description" content="React application" />
+        </Helmet>
         {/* User Searching functionality Begins here */}
 
         {searchName ? (
-          <div>
+          <div className="singlechat_box">
+            <Helmet>
+              <meta
+                name="viewport"
+                content="width=device-width, minimum-scale=1.0"
+              />
+              <title>React app</title>
+              <meta name="description" content="React application" />
+            </Helmet>
             {users.map((user) => {
               if (user.login.includes(searchName)) {
                 const { id, login, avatar_url, time, latest_msg } = user;
@@ -46,6 +63,14 @@ function ChatList() {
                       navigate("/" + id);
                     }}
                   >
+                    <Helmet>
+                      <meta
+                        name="viewport"
+                        content="width=device-width, minimum-scale=1.0"
+                      />
+                      <title>React app</title>
+                      <meta name="description" content="React application" />
+                    </Helmet>
                     <img src={avatar_url} alt={login} />
                     <div className="name">
                       <p id="login">{login}</p>
@@ -61,7 +86,7 @@ function ChatList() {
             })}
           </div>
         ) : (
-          <div>
+          <div className="singlechat_box">
             {users.map((user) => {
               const { id, login, avatar_url, time, latest_msg } = user;
               return (
@@ -106,6 +131,11 @@ function ChatList() {
 
   return (
     <div className="chatlist-container">
+      <Helmet>
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+        <title>React app</title>
+        <meta name="description" content="React application" />
+      </Helmet>
       <div className="searchBox">
         <label htmlFor="searchBox" id="icon">
           <AiOutlineSearch size={20} />

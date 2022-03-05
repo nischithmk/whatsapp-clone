@@ -1,6 +1,5 @@
-import React, { Component, useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import profilePic from "../images/profile.jpeg";
-import { HiArrowNarrowLeft, HiArrowNarrowRight } from "react-icons/hi";
 import {
   IoMdArrowDropleftCircle,
   IoMdArrowDroprightCircle,
@@ -8,10 +7,16 @@ import {
 import users from "../data";
 import { ImCross } from "react-icons/im";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AllStatusList = ({ setImageCounter }) => {
   return (
     <div className="allstatus">
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React app</title>
+        <meta name="description" content="React application" />
+      </Helmet>
       {users.map((user) => {
         if (user.id != 1 && user.id != 20) {
           const { id, login, avatar_url } = user;
@@ -55,6 +60,11 @@ const AllStatusList = ({ setImageCounter }) => {
 const StatusSidebar = () => {
   return (
     <div className="status_sidebar">
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React app</title>
+        <meta name="description" content="React application" />
+      </Helmet>
       <p id="my_status">My Status</p>
       <p id="no_update">No updates</p>
       <img src={profilePic} alt="profilepic" />
@@ -72,6 +82,11 @@ const StatusMainbar = ({
   let navigate = useNavigate();
   return (
     <div className="status_Mainbar" key={imageCounter}>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>React app</title>
+        <meta name="description" content="React application" />
+      </Helmet>
       <ImCross id="cancel" size={18} onClick={() => navigate("/")} />
       <div className="dummy"></div>
       <IoMdArrowDropleftCircle
@@ -104,49 +119,76 @@ const StatusMainbar = ({
             rightArrow ? (imageCounter - 1 >= 0 ? "one2" : "dummy") : "one"
           }
         >
-          <video
-            src={
-              rightArrow
-                ? imageCounter >= 0
-                  ? users[imageCounter].status[0]
-                  : null
-                : users[imageCounter + 2].status[0]
-            }
-            loop={true}
-          />
+          {rightArrow ? (
+            imageCounter >= 0 ? (
+              users[imageCounter].status[0].endsWith("jpeg") ? (
+                <img src={users[imageCounter].status[0]} alt="status" />
+              ) : (
+                <video src={users[imageCounter].status[0]} loop={true} />
+              )
+            ) : null
+          ) : users[imageCounter + 2].status[0].endsWith("jpeg") ? (
+            <img src={users[imageCounter + 2].status[0]} alt="status" />
+          ) : (
+            <video src={users[imageCounter + 2].status[0]} loop={true} />
+          )}
         </div>
       ) : null}
 
       {imageCounter >= 0 ? (
         <div className={rightArrow ? "two2" : "two"}>
-          <video
-            src={
-              rightArrow
-                ? users[imageCounter + 1].status[0]
-                : imageCounter == 0
-                ? null
-                : users[imageCounter].status[0]
-            }
-            loop={true}
-            autoPlay={rightArrow ? "autoPlay" : null}
-            controls={rightArrow ? true : null}
-            muted={rightArrow ? false : null}
-          />
+          {rightArrow ? (
+            users[imageCounter + 1].status[0].endsWith("jpeg") ? (
+              <img src={users[imageCounter + 1].status[0]} alt="status" />
+            ) : (
+              <video
+                src={users[imageCounter + 1].status[0]}
+                loop={true}
+                autoPlay={rightArrow ? "autoPlay" : null}
+                controls={rightArrow ? true : null}
+                muted={rightArrow ? false : null}
+              />
+            )
+          ) : imageCounter == 0 ? null : users[imageCounter].status[0].endsWith(
+              "jpeg"
+            ) ? (
+            <img src={users[imageCounter].status[0]} alt="status" />
+          ) : (
+            <video
+              src={users[imageCounter].status[0]}
+              loop={true}
+              autoPlay={rightArrow ? "autoPlay" : null}
+              controls={rightArrow ? true : null}
+              muted={rightArrow ? false : null}
+            />
+          )}
         </div>
       ) : null}
 
       <div className={rightArrow ? "three2" : "three"}>
-        <video
-          src={
-            rightArrow
-              ? users[imageCounter + 2].status[0]
-              : users[imageCounter + 1].status[0]
-          }
-          loop={true}
-          autoPlay={rightArrow ? null : "autoPlay"}
-          controls={rightArrow ? null : true}
-          muted={rightArrow ? null : false}
-        />
+        {rightArrow ? (
+          users[imageCounter + 2].status[0].endsWith("jpeg") ? (
+            <img src={users[imageCounter + 2].status[0]} alt="status" />
+          ) : (
+            <video
+              src={users[imageCounter + 2].status[0]}
+              loop={true}
+              autoPlay={rightArrow ? null : "autoPlay"}
+              controls={rightArrow ? null : true}
+              muted={rightArrow ? null : false}
+            />
+          )
+        ) : users[imageCounter + 1].status[0].endsWith("jpeg") ? (
+          <img src={users[imageCounter + 1].status[0]} alt="status" />
+        ) : (
+          <video
+            src={users[imageCounter + 1].status[0]}
+            loop={true}
+            autoPlay={rightArrow ? null : "autoPlay"}
+            controls={rightArrow ? null : true}
+            muted={rightArrow ? null : false}
+          />
+        )}
       </div>
     </div>
   );

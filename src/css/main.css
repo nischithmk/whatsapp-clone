@@ -1,17 +1,22 @@
 /* Profile bar */
 body {
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   color: #d1d7db;
   /* max-width: 1080px; */
-  margin: 0;
+  margin-right: 0;
   padding: 0;
 }
+
+/* modified */
 .profilebar-container {
   position: relative;
   height: 70px;
   width: 460px;
   background-color: #202c35;
   color: azure;
+  display: flex;
+  /* z-index: 55; */
 }
 .profilebar-container img {
   height: 50px;
@@ -27,17 +32,20 @@ body {
   border-radius: 50%;
 }
 
+/* modified */
 .profilebar-container .status,
 .chat,
 .settings {
   position: relative;
-  float: right;
-  top: 10px;
+  left: 160px;
+  top: 2vh;
   justify-content: space-between;
   display: flex;
   padding: 10px;
   margin-right: 10px;
   cursor: pointer;
+  /* z-index: 5; */
+  flex-direction: row;
 }
 
 .profilebar-container .status:hover {
@@ -53,6 +61,38 @@ body {
   border-radius: 50%;
 }
 
+.profilebar-container .setting_click_container {
+  position: relative;
+  background-color: #2a3741;
+  height: 180px;
+  width: 170px;
+  z-index: 5;
+  left: 280px;
+}
+.setting_click_container ul {
+  margin: 0px;
+  position: relative;
+  left: -20px;
+  align-items: center;
+  justify-content: center;
+}
+.setting_click_container li {
+  position: relative;
+  width: 160px;
+  top: 5px;
+  left: -22px;
+  padding: 5px;
+  margin: 2px;
+  font-weight: 400;
+  opacity: 0.8;
+  cursor: pointer;
+  list-style-type: none;
+}
+.setting_click_container li:hover {
+  background-color: #182229;
+}
+
+/* modified */
 /* chatlist */
 .chatlist-container {
   position: relative;
@@ -60,27 +100,29 @@ body {
   height: 725px;
   background-color: #111b21;
   color: white;
+  /* z-index: 55; */
 }
-.searchBox {
+
+.chatlist-container .searchBox {
   position: relative;
   top: 10px;
   left: 10px;
-  width: 430px;
+  width: 410px;
   height: 40px;
   border-radius: 10px;
   background-color: #202c35;
   border: 0px;
 }
-.searchBox #icon {
+.chatlist-container .searchBox #icon {
   position: relative;
   left: 10px;
   top: 3px;
 }
 
-.searchBox input {
+.chatlist-container .searchBox input {
   position: relative;
   height: 38px;
-  width: 400px;
+  width: 380px;
   background-color: #202c35;
   border: 0px;
   border-radius: 10px;
@@ -88,7 +130,7 @@ body {
   color: aliceblue;
   font-size: 15px;
 }
-.searchBox input:focus {
+.chatlist-container .searchBox input:focus {
   outline: none;
 }
 
@@ -168,6 +210,7 @@ body {
   left: 25px;
   text-transform: capitalize;
 }
+
 .singlechat_container .name #time {
   position: relative;
   top: -110px;
@@ -185,6 +228,9 @@ body {
   color: #22b2f0;
   text-transform: capitalize;
 }
+
+/* mainchat container */
+
 .MainChat-container {
   position: absolute;
   margin-left: 460px;
@@ -192,10 +238,14 @@ body {
   width: 1080px;
   background-color: #222e35;
   height: 795px;
+  align-items: left;
+  display: flex;
+  justify-content: left;
 }
 
 .MainChat-container .logo {
   position: relative;
+  height: 450px;
   top: 220px;
   left: 350px;
 }
@@ -205,6 +255,7 @@ body {
   position: relative;
   top: -15px;
   left: 50px;
+  width: 90%;
 }
 .MainChat-container #clone {
   position: relative;
@@ -229,6 +280,7 @@ body {
   left: 20px;
   font-size: 15px;
   opacity: 0.4;
+  word-break: break-all;
 }
 
 .MainChat-container .quote #line2 {
@@ -238,7 +290,16 @@ body {
   font-size: 15px;
   opacity: 0.4;
 }
-
+/* Active profile  */
+.ActiveProfile-container2 {
+  position: absolute;
+  margin-left: 460px;
+  top: 0px;
+  width: 770px;
+  background-image: url("../images/default.jpg");
+  background-repeat: repeat;
+  height: 795px;
+}
 .ActiveProfile-container {
   position: absolute;
   margin-left: 460px;
@@ -248,15 +309,27 @@ body {
   background-repeat: repeat;
   height: 795px;
 }
-.ActiveProfile-container .activeProfile-Navbar {
+.activeProfile-Navbar {
   position: relative;
   top: 0px;
   width: 1100px;
   background-color: #202c33;
   height: 70px;
+  cursor: pointer;
+  z-index: 1;
+}
+.activeProfile-Navbar2 {
+  position: relative;
+  top: 0px;
+  width: 610px;
+  background-color: #202c33;
+  height: 70px;
+  cursor: pointer;
+  z-index: 1;
 }
 
-.activeProfile-Navbar img {
+.activeProfile-Navbar img,
+.activeProfile-Navbar2 img {
   position: relative;
   /* padding: 5px; */
   top: 5px;
@@ -272,6 +345,12 @@ body {
   left: 0px;
   width: 900px;
 }
+.activeProfile-Navbar2 .name {
+  position: relative;
+  top: -65px;
+  left: 0px;
+  width: 500px;
+}
 
 .activeProfile-Navbar .name #name {
   position: relative;
@@ -285,18 +364,36 @@ body {
   width: 900px;
   overflow: hidden;
 }
-.activeProfile-Navbar .name #online {
+.activeProfile-Navbar2 .name #name {
   position: relative;
   /* padding: 5px; */
+  top: 0;
+  left: 90px;
+  color: azure;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: bold;
+  width: 450px;
+  overflow: hidden;
+}
+.activeProfile-Navbar .name #online {
+  position: relative;
   top: -20px;
   left: 91px;
   color: azure;
   font-size: 14px;
   opacity: 0.5;
   width: 900px;
-  /* margin-right: auto; */
 }
-
+.activeProfile-Navbar2 .name #online {
+  position: relative;
+  top: -20px;
+  left: 91px;
+  color: azure;
+  font-size: 14px;
+  opacity: 0.5;
+  width: 450px;
+}
 .activeProfile-Navbar .profile_icons {
   position: relative;
   justify-content: space-around;
@@ -304,31 +401,63 @@ body {
   left: 0px;
   height: 100px;
   width: 100px;
-  /* background-color: aqua; */
   color: aliceblue;
 }
-.activeProfile-Navbar .profile_icons #search {
+.activeProfile-Navbar #search {
   position: relative;
   top: 20px;
+  left: 940px;
+}
+.activeProfile-Navbar2 #search2 {
+  position: relative;
+  top: -130px;
+  left: 450px;
+}
+.activeProfile-Navbar .settings {
+  position: relative;
+  top: -20px;
   left: 980px;
 }
-.activeProfile-Navbar .profile_icons .settings {
+.activeProfile-Navbar2 .settings2 {
   position: relative;
-  top: 10px;
-  left: 980px;
+  top: -130px;
+  left: 490px;
 }
 
-/* Message bar  */
+/* Message bar  inside active profile*/
 
 .messagebar-container {
   position: relative;
   top: 655px;
-  width: 1100px;
+  width: 1080px;
   background-color: #202c33;
   height: 70px;
 }
+.messagebar-container2 {
+  position: relative;
+  top: 655px;
+  width: 610px;
+  background-color: #202c33;
+  height: 70px;
+}
+.messagebar-container2 #message2 {
+  position: absolute;
+  left: 140px;
+  top: 5px;
+  height: 50px;
+  bottom: 5px;
+  width: 360px;
+  background-color: #2a3942;
+  border: 1px solid #2a3942;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.9;
+  color: white;
+  padding-left: 30px;
+}
 
-.messagebar-container input {
+.messagebar-container #message {
   position: absolute;
   left: 140px;
   top: 5px;
@@ -344,15 +473,25 @@ body {
   color: white;
   padding-left: 30px;
 }
-.messagebar-container .smiley {
+
+.messagebar-container .smiley,
+.messagebar-container2 .smiley {
   position: absolute;
   left: 16px;
   top: 12px;
   height: 45px;
 }
 
-.messagebar-container .smiley:hover {
+.messagebar-container .smiley:hover,
+.messagebar-container2 .smiley:hover {
   color: #6c9aad;
+}
+
+.messagebar-container2 .send2 {
+  position: absolute;
+  left: 550px;
+  top: 8px;
+  height: 45px;
 }
 .messagebar-container .send {
   position: absolute;
@@ -360,27 +499,33 @@ body {
   top: 8px;
   height: 45px;
 }
-.messagebar-container .send:hover {
+.messagebar-container .send:hover,
+.messagebar-container2 .send2:hover {
   color: #6c9aad;
 }
-.messagebar-container .file {
+
+.messagebar-container .file,
+.messagebar-container2 .file {
   position: absolute;
   left: 80px;
   top: 16px;
   color: rgb(186, 197, 207);
 }
-.messagebar-container .file:hover {
+.messagebar-container .file:hover,
+.messagebar-container2 .file:hover {
   color: #6c9aad;
 }
 
-.messagebar-container input:focus {
+.messagebar-container input:focus,
+.messagebar-container2 input:focus {
   outline: none;
 }
 
-.messagebar-container .emoji {
+.messagebar-container .emoji,
+.messagebar-container2 .emoji {
   position: relative;
   left: 10px;
-  top: -470px;
+  top: -340px;
   z-index: 10;
   transition: 1s;
 }
@@ -410,17 +555,24 @@ body {
   opacity: 0.5; /* Firefox */
 }
 
-/* Messages */
+/* Messages sent inside active profile container*/
 
-.message_container {
-  /* margin-left: 50px; */
+.message_container2 {
   position: relative;
-  /* margin-right: 50px; */
-  top: -131px;
+  top: -91px;
+  height: 651px;
+  width: 558px;
+  left: 50px;
+  overflow: auto;
+  transform: rotateZ(180deg);
+  direction: rtl;
+}
+.message_container {
+  position: relative;
+  top: -91px;
   height: 651px;
   width: 1038px;
   left: 50px;
-  /* background-color: rgb(127, 145, 145); */
   overflow: auto;
   transform: rotateZ(180deg);
   direction: rtl;
@@ -440,18 +592,8 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   word-break: break-word;
-  /* animation: bounce 2s ease-in-out infinite; */
 }
-/* 
-@keyframes bounce {
-  0%,
-  100% {
-    transform: scale(0.9);
-  }
-  50% {
-    transform: scale(1);
-  }
-} */
+
 .align-left {
   align-self: flex-start;
   margin-right: 2rem;
@@ -560,22 +702,24 @@ body {
 }
 
 /* file upload  */
-.messagebar-container .box2 {
+.messagebar-container .box2,
+.messagebar-container2 .box2 {
   position: relative;
   left: 60px;
   height: 200px;
   width: 30px;
   background-color: transparent;
-  /* transition: 5s ease-in-out; */
   animation: z 0.5s 1;
   z-index: 1;
   top: -170px;
 }
-.messagebar-container .box2:hover {
+.messagebar-container .box2:hover,
+.messagebar-container2 .box2:hover {
   cursor: pointer;
 }
 
-.box2 svg {
+.messagebar-container .box2 svg,
+.messagebar-container2 .box2 svg {
   animation: grow 0.5s 1;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -588,19 +732,15 @@ body {
   }
 
   100% {
-    /* transform: translateY(100%); */
     height: 53px;
   }
 }
 @keyframes z {
   0% {
-    /* transform: translateY(0%); */
-    /* height: 0px; */
     top: -100px;
   }
 
   100% {
-    /* transform: translateY(100%); */
     top: -170px;
   }
 }
@@ -644,19 +784,14 @@ body {
   background-color: #6c9aad;
 }
 
-/* .webcam_container {
-  
-} */
-
 .webcam {
   position: relative;
   height: 600px;
   width: 1100;
   top: -800px;
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   width: 1080px;
-  /* height: 645px; */
   background-color: #202c33;
   overflow: auto;
   top: -650px;
@@ -674,15 +809,226 @@ body {
   text-transform: uppercase;
   font-weight: bolder;
   font-size: 15px;
-  /* opacity: 0.5; */
   border-radius: 10px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 2;
 }
 .sendImageBackground:hover {
   background-color: #6c9aad;
 }
 
+/* chat profile view inside active profile  */
+.chatprofileview_container {
+  position: absolute;
+  height: 100%;
+  width: 480px;
+  top: 0;
+  right: -320px;
+  background-color: #111b21;
+  overflow-x: scroll;
+}
+.chatprofileview_container .navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+  height: 70px;
+  width: 480px;
+  background-color: #202c33;
+}
+.navbar p {
+  position: relative;
+  left: 100px;
+  bottom: 26px;
+  font-size: 22px;
+  font-weight: 450;
+  opacity: 0.9;
+  width: 50%;
+}
+.chatprofileview_container .image {
+  position: relative;
+  top: 0px;
+  height: 390px;
+  width: 480px;
+  background-color: #1d262b;
+}
+.chatprofileview_container img {
+  position: relative;
+  top: 20px;
+  left: 100px;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+}
+.chatprofileview_container #name {
+  position: relative;
+  font-size: 28px;
+  left: 190px;
+  text-transform: capitalize;
+  font-weight: 600;
+  width: 50%;
+}
+.chatprofileview_container .about {
+  position: relative;
+  top: -10px;
+  height: 70px;
+  width: 480px;
+  background-color: #1d262b;
+}
+.chatprofileview_container #about {
+  position: relative;
+  top: 0px;
+  font-size: 18px;
+  left: 20px;
+  opacity: 0.8;
+  width: 90%;
+}
+.chatprofileview_container #quote {
+  position: relative;
+  top: -22px;
+  font-size: 22px;
+  left: 20px;
+  opacity: 0.9;
+  font-family: cursive;
+  width: 90%;
+}
+.chatprofileview_container .media {
+  position: relative;
+  top: -3px;
+  height: 170px;
+  width: 480px;
+  background-color: #1d262b;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.media p {
+  position: relative;
+  top: 2px;
+  font-size: 18px;
+  left: 20px;
+  width: 90%;
+  opacity: 0.8;
+}
+.media img {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  top: -10px;
+  left: 20px;
+  margin: 3px;
+  border-radius: 10%;
+}
+
+.chatprofileview_container .starred {
+  position: relative;
+  top: 5px;
+  height: 70px;
+  width: 480px;
+  background-color: #1d262b;
+}
+
+.starred p {
+  position: relative;
+  top: -26px;
+  left: 80px;
+  font-size: 20px;
+  width: 70%;
+}
+.chatprofileview_container .notification {
+  position: relative;
+  top: 15px;
+  height: 220px;
+  width: 480px;
+  background-color: #1d262b;
+}
+.notification p {
+  position: relative;
+  top: -28px;
+  left: 80px;
+  font-size: 20px;
+  width: 70%;
+}
+.disappear p:nth-child(2) {
+  position: relative;
+  top: -72px;
+  left: 80px;
+  font-size: 20px;
+  width: 70%;
+}
+.disappear p:nth-child(3) {
+  position: relative;
+  top: -88px;
+  left: 80px;
+  font-size: 16px;
+  width: 70%;
+  opacity: 0.6;
+}
+
+.encryption p:nth-child(2) {
+  position: relative;
+  top: -152px;
+  left: 80px;
+  font-size: 20px;
+  width: 70%;
+}
+.encryption p:nth-child(3) {
+  position: relative;
+  top: -168px;
+  left: 80px;
+  font-size: 16px;
+  width: 70%;
+  opacity: 0.6;
+}
+
+.chatprofileview_container .block_report {
+  position: relative;
+  top: 25px;
+  height: 120px;
+  width: 480px;
+  background-color: #1d262b;
+}
+
+.block_report .block {
+  position: relative;
+  top: 15px;
+  left: 60px;
+  font-size: 20px;
+  width: 70%;
+  text-transform: capitalize;
+  color: rgb(209, 65, 65);
+  font-weight: 500;
+}
+
+.block_report .report {
+  position: relative;
+  top: 40px;
+  left: 60px;
+  font-size: 20px;
+  width: 70%;
+  text-transform: capitalize;
+  color: rgb(209, 65, 65);
+  font-weight: 500;
+}
+
+.chatprofileview_container .delete {
+  position: relative;
+  top: 35px;
+  height: 70px;
+  width: 480px;
+  background-color: #1d262b;
+}
+.delete p {
+  position: relative;
+  top: -30px;
+  left: 85px;
+  font-size: 20px;
+  width: 70%;
+  text-transform: capitalize;
+  color: rgb(209, 65, 65);
+  font-weight: 500;
+}
 /* sidebar */
 
 .sidebar {
@@ -698,12 +1044,10 @@ body {
 
 @keyframes slideInFromLeft {
   0% {
-    /* transform: translateX(-100%); */
     width: 0px;
   }
 
   100% {
-    /* transform: translateX(0); */
     width: 460px;
   }
 }
@@ -962,27 +1306,27 @@ body {
   }
 }
 
-.one > video {
+.one * {
   position: relative;
   height: 450px;
   width: 250px;
 }
-.one2 > video {
+.one2 * {
   position: relative;
   height: 450px;
   width: 250px;
 }
-.three2 > video {
+.three2 * {
   position: relative;
   height: 450px;
   width: 250px;
 }
-.two > video {
+.two * {
   position: relative;
   height: 450px;
   width: 250px;
 }
-.three > video {
+.three * {
   position: relative;
   height: 100px;
   animation: slideLeftImg2 0.5s forwards;
@@ -1004,7 +1348,7 @@ body {
     left: 0px;
   }
 }
-.two2 > video {
+.two2 * {
   position: relative;
   height: 100px;
   animation: slideLeftImg 0.5s forwards;
@@ -1220,4 +1564,268 @@ body {
   text-transform: capitalize;
   color: aliceblue;
   z-index: 100;
+}
+
+/* max-width: 620px 
+(min-width: 380px)
+*/
+/* @media (max-width: 400px) {
+  .singlechat_container,
+  .ActiveProfile-container,
+  .ActiveProfile-container .activeProfile-Navbar,
+  .messagebar-container,
+  .leftside_message,
+  .rightside_message,
+  .singleStatus_container {
+    width: 100%;
+  }
+  .activeProfile-Navbar .name,
+  .activeProfile-Navbar .name #name,
+  .activeProfile-Navbar .name #online {
+    width: 60%;
+  }
+  .activeProfile-Navbar .profile_icons #search,
+  .activeProfile-Navbar .profile_icons .settings {
+    width: 30%;
+    left: 290%;
+    height: 30%;
+  }
+
+  .singlechat_container .name {
+    width: 50%;
+  }
+  .singlechat_container .name #time {
+    left: 80%;
+    width: 40%;
+  }
+  .chatlist-container {
+    width: 100%;
+  }
+  .chatlist-container .searchBox {
+    width: 90%;
+  }
+  .chatlist-container .searchBox input {
+    top: 0%;
+    left: 10%;
+    width: 80%;
+  }
+  #singlechat_container_id.singlechat_container {
+    width: 100%;
+  }
+  .singlechat_box {
+    width: 150%;
+  }
+  .allchats {
+    width: 100%;
+  }
+  .ActiveProfile-container {
+    /* width: 100%; */
+/* margin-left: 390px;
+  }
+  .MainChat-container {
+    margin-left: 390px;
+    width: 100%;
+  }
+  .MainChat-container .logo {
+    left: -1%;
+  }
+  .MainChat-container p {
+    width: 100%;
+    left: 5%;
+  }
+  .MainChat-container #clone {
+    left: 75%;
+  }
+  .rightleft_message_containter {
+    width: 90%;
+  }
+  .MainChat-container .quote #line1 {
+    left: 1%;
+  }
+  .MainChat-container .quote #line2 {
+    width: 80%;
+  }
+  .fileUploaded,
+  .webcam_container,
+  .webcam,
+  .sendImageBackground {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .messagebar-container #message {
+    width: 50%;
+    left: 30%;
+  }
+}
+@media (max-width: 400px) {
+  .messagebar-container .send {
+    width: 10%;
+    left: 90%;
+  }
+}
+@media (max-width: 400px) {
+  .message_container {
+    width: 95%;
+    left: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .profilebar-container {
+    width: 100%;
+  } */
+/* } */
+
+@media all and (max-width: 1200px) {
+  body {
+    overflow-y: hidden;
+  }
+  .chatlist-container,
+  .profilebar-container,
+  .allchats {
+    width: 390px;
+  }
+  .allchats {
+    height: 85vh;
+  }
+  .chatlist-container .searchBox {
+    width: 350px;
+  }
+  .chatlist-container .searchBox input {
+    width: 325px;
+  }
+  .singlechat_container .name #time {
+    left: 250px;
+  }
+  .MainChat-container {
+    width: 390px;
+    margin-left: 390px;
+    height: 100vh;
+  }
+  .MainChat-container .logo {
+    left: -2px;
+  }
+  .MainChat-container p,
+  .MainChat-container .quote #line1,
+  .MainChat-container .quote #line2 {
+    left: 15px;
+  }
+  .MainChat-container #clone {
+    left: 300px;
+  }
+
+  /* active chat  */
+  .ActiveProfile-container,
+  .ActiveProfile-container2 {
+    width: 99vw;
+    margin-left: 390px;
+    height: 100vh;
+  }
+  .ActiveProfile-container .activeProfile-Navbar,
+  .ActiveProfile-container2 .activeProfile-Navbar2 {
+    width: 99vw;
+  }
+  .activeProfile-Navbar .name,
+  .activeProfile-Navbar .name #name,
+  .activeProfile-Navbar .name #online,
+  .activeProfile-Navbar2 .name,
+  .activeProfile-Navbar2 .name #name,
+  .activeProfile-Navbar2 .name #online {
+    width: 280px;
+  }
+  .activeProfile-Navbar #search {
+    left: 250px;
+  }
+  .activeProfile-Navbar .settings {
+    left: 280px;
+  }
+
+  /* messagebar  */
+  .messagebar-container,
+  .messagebar-container2 {
+    width: 390px;
+    top: 713px;
+  }
+  .messagebar-container .file,
+  .messagebar-container2 .file {
+    left: 60px;
+  }
+  .messagebar-container #message,
+  .messagebar-container2 #message2 {
+    width: 200px;
+    left: 100px;
+  }
+  .messagebar-container .send,
+  .messagebar-container2 .send2 {
+    left: 345px;
+  }
+  .messagebar-container .emoji {
+    top: -330px;
+    left: 0;
+  }
+
+  /* messages  */
+  .message_container,
+  .message_container2 {
+    width: 390px;
+    top: -60px;
+    left: 0px;
+    height: 690px;
+  }
+
+  /* status page  */
+  .status_sidebar {
+    height: 100vh;
+  }
+  .allstatus {
+    height: 100vh;
+  }
+  .status_Mainbar {
+    height: 100vh;
+  }
+
+  /* for chat profile view  */
+  .activeProfile-Navbar2 #search2,
+  .activeProfile-Navbar2 .settings2 {
+    top: -120px;
+    left: 290px;
+  }
+
+  .chatprofileview_container {
+    left: 0;
+    width: 100vw;
+    z-index: 55;
+  }
+  .chatprofileview_container .navbar {
+    width: 100vw;
+  }
+  .chatprofileview_container .image,
+  .chatprofileview_container .about,
+  .chatprofileview_container .media,
+  .chatprofileview_container .starred,
+  .chatprofileview_container .notification,
+  .chatprofileview_container .block_report,
+  .chatprofileview_container .delete {
+    width: 100vw;
+  }
+  .chatprofileview_container img {
+    left: 50px;
+  }
+  .chatprofileview_container #name {
+    left: 150px;
+  }
+  .media img {
+    height: 80px;
+    width: 80px;
+    left: 30px;
+  }
+  .expanded_sidebar {
+    height: 100vh;
+  }
+  .webcam,
+  .sendImageBackground {
+    width: 98vw;
+  }
 }

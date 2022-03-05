@@ -1,7 +1,12 @@
-import vid1 from "./Videos/one.mp4";
-import vid2 from "./Videos/two.mp4";
-import vid3 from "./Videos/three.mp4";
-import vid4 from "./Videos/four.mp4";
+import vid1 from "./Videos/1.mp4";
+import vid2 from "./Videos/2.mp4";
+import vid3 from "./Videos/3.mp4";
+import vid4 from "./Videos/4.mp4";
+import vid5 from "./Videos/5.mp4";
+import vid6 from "./Videos/6.mp4";
+import vid7 from "./Videos/7.mp4";
+import profilePic from "./images/profilepic.jpeg";
+import profilePic2 from "./images/profilepic2.jpeg";
 
 const users = [
   {
@@ -18,7 +23,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/2?v=4",
     latest_msg: "",
     time: "",
-    status: [vid2],
+    status: [profilePic],
   },
   {
     login: "pjhyett",
@@ -34,7 +39,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/4?v=4",
     latest_msg: "",
     time: "",
-    status: [vid1],
+    status: [vid5],
   },
   {
     login: "ivey",
@@ -42,7 +47,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/6?v=4",
     latest_msg: "",
     time: "",
-    status: [vid1],
+    status: [profilePic2],
   },
   {
     login: "vanpelt",
@@ -50,7 +55,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/17?v=4",
     latest_msg: "",
     time: "",
-    status: [vid4],
+    status: [vid7],
   },
 
   {
@@ -67,7 +72,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/19?v=4",
     latest_msg: "",
     time: "",
-    status: [vid1],
+    status: [vid2],
   },
   {
     login: "kevinclark",
@@ -83,7 +88,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/21?v=4",
     latest_msg: "",
     time: "",
-    status: [vid4],
+    status: [vid2],
   },
   {
     login: "macournoyer",
@@ -91,7 +96,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/22?v=4",
     latest_msg: "",
     time: "",
-    status: [vid4],
+    status: [profilePic],
   },
   {
     login: "takeo",
@@ -107,7 +112,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/27?v=4",
     latest_msg: "",
     time: "",
-    status: [vid4],
+    status: [vid5],
   },
   {
     login: "roland",
@@ -115,7 +120,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/28?v=4",
     latest_msg: "",
     time: "",
-    status: [vid4],
+    status: [profilePic2],
   },
   {
     login: "tomtt",
@@ -123,7 +128,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/31?v=4",
     latest_msg: "",
     time: "",
-    status: [vid4],
+    status: [vid7],
   },
   {
     login: "nitay",
@@ -131,7 +136,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/34?v=4",
     latest_msg: "",
     time: "",
-    status: [vid4],
+    status: [vid1],
   },
   {
     login: "jamesgolick",
@@ -139,7 +144,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/37?v=4",
     latest_msg: "",
     time: "",
-    status: [vid4],
+    status: [profilePic],
   },
   {
     login: "atmos",
@@ -147,7 +152,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/38?v=4",
     latest_msg: "",
     time: "",
-    status: [vid4],
+    status: [vid3],
   },
   {
     login: "mojodna",
@@ -163,7 +168,7 @@ const users = [
     avatar_url: "https://avatars.githubusercontent.com/u/46?v=4",
     latest_msg: "",
     time: "",
-    status: [vid4],
+    status: [profilePic2],
   },
 ];
 export default users;
