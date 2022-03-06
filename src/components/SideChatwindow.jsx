@@ -14,7 +14,10 @@ function SideChatWindow() {
   return (
     <div>
       <Helmet>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="viewport"
+          content="width=device-width, minimum-scale=1.0, user-scalable=no"
+        />
         <title>React app</title>
         <meta name="description" content="React application" />
       </Helmet>

@@ -10,6 +10,7 @@ import {
 import { IoIosTimer, IoIosLock } from "react-icons/io";
 import { RiForbid2Line, RiDeleteBin7Line } from "react-icons/ri";
 import { HiOutlineThumbDown } from "react-icons/hi";
+import { Helmet } from "react-helmet";
 import m1 from "../images/media1.jpg";
 import m2 from "../images/media2.jpg";
 import m3 from "../images/media3.jpg";
@@ -20,6 +21,14 @@ function ChatProfileView({ isprofileClicked, setisprofileClicked }) {
   var user = data[PrfileID - 1];
   return (
     <div className="chatprofileview_container">
+      <Helmet>
+        <meta
+          name="viewport"
+          content="width=device-width, minimum-scale=1.0, user-scalable=no"
+        />
+        <title>React app</title>
+        <meta name="description" content="React application" />
+      </Helmet>
       <div className="navbar">
         <ImCross
           size={17}

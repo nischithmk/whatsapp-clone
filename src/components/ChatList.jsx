@@ -22,7 +22,7 @@ function ChatList() {
         <Helmet>
           <meta
             name="viewport"
-            content="width=device-width, minimum-scale=1.0"
+            content="width=device-width, minimum-scale=1.0, user-scalable=no"
           />
           <title>React app</title>
           <meta name="description" content="React application" />
@@ -34,7 +34,7 @@ function ChatList() {
             <Helmet>
               <meta
                 name="viewport"
-                content="width=device-width, minimum-scale=1.0"
+                content="width=device-width, minimum-scale=1.0, user-scalable=no"
               />
               <title>React app</title>
               <meta name="description" content="React application" />
@@ -66,7 +66,7 @@ function ChatList() {
                     <Helmet>
                       <meta
                         name="viewport"
-                        content="width=device-width, minimum-scale=1.0"
+                        content="width=device-width, minimum-scale=1.0, user-scalable=no"
                       />
                       <title>React app</title>
                       <meta name="description" content="React application" />
@@ -132,7 +132,10 @@ function ChatList() {
   return (
     <div className="chatlist-container">
       <Helmet>
-        <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+        <meta
+          name="viewport"
+          content="width=device-width, minimum-scale=1.0, user-scalable=no"
+        />
         <title>React app</title>
         <meta name="description" content="React application" />
       </Helmet>

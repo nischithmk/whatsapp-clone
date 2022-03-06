@@ -9,7 +9,10 @@ const OwnerProfileSideBar = (props) => {
   return (
     <div className="expanded_sidebar">
       <Helmet>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="viewport"
+          content="width=device-width, minimum-scale=1.0, user-scalable=no"
+        />
         <title>React app</title>
         <meta name="description" content="React application" />
       </Helmet>
@@ -39,7 +42,10 @@ const OwnerProfileCloisngSideBar = (props) => {
   return (
     <div className="closingBar">
       <Helmet>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="viewport"
+          content="width=device-width, minimum-scale=1.0, user-scalable=no"
+        />
         <title>React app</title>
         <meta name="description" content="React application" />
       </Helmet>
