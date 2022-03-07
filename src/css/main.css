@@ -1,14 +1,12 @@
-/* Profile bar */
 body {
   overflow-x: auto;
   overflow-y: hidden;
   color: #d1d7db;
-  /* max-width: 1080px; */
   margin-right: 0;
   padding: 0;
 }
 
-/* modified */
+/* left side user prfile bar  */
 .profilebar-container {
   position: relative;
   height: 70px;
@@ -16,7 +14,6 @@ body {
   background-color: #202c35;
   color: azure;
   display: flex;
-  /* z-index: 55; */
 }
 .profilebar-container img {
   height: 50px;
@@ -32,7 +29,6 @@ body {
   border-radius: 50%;
 }
 
-/* modified */
 .profilebar-container .status,
 .chat,
 .settings {
@@ -44,7 +40,6 @@ body {
   padding: 10px;
   margin-right: 10px;
   cursor: pointer;
-  /* z-index: 5; */
   flex-direction: row;
 }
 
@@ -93,15 +88,13 @@ body {
   background-color: #182229;
 }
 
-/* modified */
-/* chatlist */
+/* left side user recent chat list  */
 .chatlist-container {
   position: relative;
   width: 460px;
   height: 725px;
   background-color: #111b21;
   color: white;
-  /* z-index: 55; */
 }
 
 .chatlist-container .searchBox {
@@ -165,8 +158,7 @@ body {
   background: #555;
 }
 
-/* singlechat_container */
-
+/* left side singlechat_container user image latest msg and time */
 .singlechat_container {
   position: relative;
   height: 75px;
@@ -230,7 +222,7 @@ body {
   text-transform: capitalize;
 }
 
-/* mainchat container */
+/* right side container before user clicks on any name */
 
 .MainChat-container {
   position: absolute;
@@ -291,7 +283,7 @@ body {
   font-size: 15px;
   opacity: 0.4;
 }
-/* Active profile  */
+/* right side container when any user is selected */
 .ActiveProfile-container2 {
   position: absolute;
   margin-left: 460px;
@@ -332,7 +324,6 @@ body {
 .activeProfile-Navbar img,
 .activeProfile-Navbar2 img {
   position: relative;
-  /* padding: 5px; */
   top: 5px;
   left: 20px;
   height: 55px;
@@ -367,7 +358,6 @@ body {
 }
 .activeProfile-Navbar2 .name #name {
   position: relative;
-  /* padding: 5px; */
   top: 0;
   left: 90px;
   color: azure;
@@ -426,7 +416,6 @@ body {
 }
 
 /* Message bar  inside active profile*/
-
 .messagebar-container {
   position: relative;
   top: 655px;
@@ -557,7 +546,6 @@ body {
 }
 
 /* Messages sent inside active profile container*/
-
 .message_container2 {
   position: relative;
   top: -91px;
@@ -702,7 +690,7 @@ body {
   transform: translateX(5.5px) rotate(45deg);
 }
 
-/* file upload  */
+/* container to show uploaded file  */
 .messagebar-container .box2,
 .messagebar-container2 .box2 {
   position: relative;
@@ -818,7 +806,7 @@ body {
   background-color: #6c9aad;
 }
 
-/* chat profile view inside active profile  */
+/* user chat profile view inside active profile  */
 .chatprofileview_container {
   position: absolute;
   height: 100%;
@@ -1030,7 +1018,8 @@ body {
   color: rgb(209, 65, 65);
   font-weight: 500;
 }
-/* sidebar */
+
+/* leftside container which displays owners profile info */
 
 .sidebar {
   position: absolute;
@@ -1064,11 +1053,11 @@ body {
   overflow-x: hidden;
   padding-top: 60px;
   animation-name: slideInFromLeft;
-  animation-duration: 0.5s; /* or: Xms */
+  animation-duration: 0.5s;
   animation-iteration-count: 1;
-  animation-direction: normal; /* or: normal */
-  animation-timing-function: ease; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-  animation-fill-mode: forwards; /* or: backwards, both, none */
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
   animation-delay: 0s;
 }
 .expanded_sidebar .close_button {
@@ -1173,14 +1162,16 @@ body {
   overflow-x: hidden;
   padding-top: 60px;
   animation-name: slideOutToLeft;
-  animation-duration: 0.4s; /* or: Xms */
+  animation-duration: 0.4s;
   animation-iteration-count: 1;
-  animation-direction: normal; /* or: normal */
-  animation-timing-function: ease; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-  animation-fill-mode: forwards; /* or: backwards, both, none */
+  animation-direction: normal;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
   animation-delay: 0s;
 }
 
+/* statu page starts here  */
+/* container to display status uploaded users  */
 .status_sidebar {
   height: 792px;
   position: absolute;
@@ -1240,8 +1231,7 @@ body {
   border-radius: 10%;
 }
 
-/* status page box */
-
+/* status page right side container */
 .dummy {
   position: absolute;
   height: 450px;
@@ -1468,34 +1458,6 @@ body {
   }
 }
 
-/* image name and time displaying inside video */
-
-.status_Mainbar .left_arrow {
-  position: relative;
-  top: 370px;
-  left: 290px;
-  z-index: 5;
-}
-.left_arrow:hover {
-  color: #6c9aad;
-  cursor: pointer;
-
-  box-shadow: rgba(177, 223, 14, 0.911) 0px 30px 60px -12px,
-    rgb(243, 4, 4) 0px 18px 36px -18px;
-}
-.status_Mainbar .right_arrow {
-  position: relative;
-  top: 370px;
-  left: 760px;
-  z-index: 5;
-}
-.right_arrow:hover {
-  color: #6c9aad;
-  cursor: pointer;
-  box-shadow: rgba(177, 223, 14, 0.911) 0px 30px 60px -12px,
-    rgb(243, 4, 4) 0px 18px 36px -18px;
-}
-
 /* status sidebar */
 
 .allstatus {
@@ -1534,7 +1496,6 @@ body {
   position: absolute;
   top: 4.1px;
   left: 3px;
-  /* z-index: 10; */
 }
 .singleStatus_container .name {
   position: relative;
@@ -1565,694 +1526,4 @@ body {
   text-transform: capitalize;
   color: aliceblue;
   z-index: 100;
-}
-
-/* Media query starts here  */
-
-@media all and (min-width: 0px) and (max-width: 399px) {
-  html,
-  body {
-    overflow-y: hidden;
-  }
-  .chatlist-container,
-  .profilebar-container,
-  .allchats {
-    width: 390px;
-  }
-  .allchats {
-    height: 85vh;
-  }
-  .chatlist-container .searchBox {
-    width: 350px;
-  }
-  .chatlist-container .searchBox input {
-    width: 325px;
-  }
-  .singlechat_container .name #time {
-    left: 250px;
-  }
-  .MainChat-container {
-    width: 390px;
-    margin-left: 390px;
-    height: 100vh;
-  }
-  .MainChat-container .logo {
-    left: -2px;
-  }
-  .MainChat-container p,
-  .MainChat-container .quote #line1,
-  .MainChat-container .quote #line2 {
-    left: 15px;
-  }
-  .MainChat-container #clone {
-    left: 300px;
-  }
-
-  /* active chat  */
-  .ActiveProfile-container,
-  .ActiveProfile-container2 {
-    width: 390px;
-    margin-left: 390px;
-    height: 100vh;
-  }
-  .ActiveProfile-container .activeProfile-Navbar,
-  .ActiveProfile-container2 .activeProfile-Navbar2 {
-    width: 390px;
-  }
-  .activeProfile-Navbar .name,
-  .activeProfile-Navbar .name #name,
-  .activeProfile-Navbar .name #online,
-  .activeProfile-Navbar2 .name,
-  .activeProfile-Navbar2 .name #name,
-  .activeProfile-Navbar2 .name #online {
-    width: 280px;
-  }
-  .activeProfile-Navbar #search {
-    left: 250px;
-  }
-  .activeProfile-Navbar .settings {
-    left: 280px;
-  }
-
-  /* messagebar  */
-  .messagebar-container,
-  .messagebar-container2 {
-    width: 390px;
-    top: 713px;
-  }
-  .messagebar-container .file,
-  .messagebar-container2 .file {
-    left: 60px;
-  }
-  .messagebar-container #message,
-  .messagebar-container2 #message2 {
-    width: 200px;
-    left: 100px;
-  }
-  .messagebar-container .send,
-  .messagebar-container2 .send2 {
-    left: 345px;
-  }
-  .messagebar-container .emoji {
-    top: -330px;
-    left: 0;
-  }
-
-  /* messages  */
-  .message_container,
-  .message_container2 {
-    width: 390px;
-    top: -60px;
-    left: 0px;
-    height: 690px;
-  }
-
-  /* status page  */
-  .status_sidebar {
-    height: 100vh;
-  }
-  .allstatus {
-    height: 100vh;
-  }
-  .status_Mainbar {
-    height: 100vh;
-  }
-
-  /* for chat profile view  */
-  .activeProfile-Navbar2 #search2,
-  .activeProfile-Navbar2 .settings2 {
-    top: -120px;
-    left: 290px;
-  }
-
-  .chatprofileview_container {
-    left: 0;
-    width: 390px;
-    z-index: 55;
-  }
-  .chatprofileview_container .navbar {
-    width: 390px;
-  }
-  .chatprofileview_container .image,
-  .chatprofileview_container .about,
-  .chatprofileview_container .media,
-  .chatprofileview_container .starred,
-  .chatprofileview_container .notification,
-  .chatprofileview_container .block_report,
-  .chatprofileview_container .delete {
-    width: 390px;
-  }
-  .chatprofileview_container img {
-    left: 50px;
-  }
-  .chatprofileview_container #name {
-    left: 150px;
-  }
-  .media img {
-    height: 80px;
-    width: 80px;
-    left: 30px;
-  }
-  .expanded_sidebar {
-    height: 100vh;
-  }
-  .webcam,
-  .sendImageBackground {
-    width: 98vw;
-  }
-}
-
-@media all and (min-width: 400px) and (max-width: 799px) {
-  body {
-    overflow-y: hidden;
-  }
-  .chatlist-container,
-  .profilebar-container,
-  .allchats {
-    width: 50vw;
-  }
-  .allchats {
-    height: 85vh;
-  }
-  .chatlist-container .searchBox {
-    width: 350px;
-  }
-  .chatlist-container .searchBox input {
-    width: 325px;
-  }
-  .singlechat_container .name #time {
-    left: 30vw;
-  }
-  .MainChat-container {
-    width: 100vw;
-    margin-left: 50vw;
-    height: 100vh;
-  }
-  .MainChat-container .logo {
-    left: 20vw;
-  }
-  .MainChat-container p,
-  .MainChat-container .quote #line1,
-  .MainChat-container .quote #line2 {
-    left: 15px;
-  }
-  .MainChat-container #clone {
-    left: 300px;
-  }
-
-  /* active chat  */
-  .ActiveProfile-container,
-  .ActiveProfile-container2 {
-    width: 50vw;
-    margin-left: 50vw;
-    height: 100vh;
-  }
-  .ActiveProfile-container .activeProfile-Navbar,
-  .ActiveProfile-container2 .activeProfile-Navbar2 {
-    width: 50vw;
-  }
-  .activeProfile-Navbar .name,
-  .activeProfile-Navbar .name #name,
-  .activeProfile-Navbar .name #online,
-  .activeProfile-Navbar2 .name,
-  .activeProfile-Navbar2 .name #name,
-  .activeProfile-Navbar2 .name #online {
-    width: 280px;
-  }
-  .activeProfile-Navbar #search {
-    left: 30vw;
-  }
-  .activeProfile-Navbar .settings {
-    left: 35vw;
-  }
-
-  /* messagebar  */
-  .messagebar-container,
-  .messagebar-container2 {
-    width: 50vw;
-    top: 83vh;
-  }
-  .messagebar-container .file,
-  .messagebar-container2 .file {
-    left: 60px;
-  }
-  .messagebar-container #message,
-  .messagebar-container2 #message2 {
-    width: 200px;
-    left: 100px;
-  }
-  .messagebar-container .send,
-  .messagebar-container2 .send2 {
-    left: 345px;
-  }
-  .messagebar-container .emoji {
-    top: -330px;
-    left: 0;
-  }
-
-  /* messages  */
-  .message_container,
-  .message_container2 {
-    width: 390px;
-    top: -120px;
-    left: 0px;
-    height: 690px;
-  }
-
-  /* status page  */
-  .status_sidebar {
-    height: 100vh;
-  }
-  .allstatus {
-    height: 100vh;
-  }
-  .status_Mainbar {
-    height: 100vh;
-  }
-
-  /* for chat profile view  */
-  .activeProfile-Navbar2 #search2,
-  .activeProfile-Navbar2 .settings2 {
-    top: -120px;
-    left: 290px;
-  }
-
-  .chatprofileview_container {
-    left: 0;
-    width: 390px;
-    z-index: 55;
-  }
-  .chatprofileview_container .navbar {
-    width: 390px;
-  }
-  .chatprofileview_container .image,
-  .chatprofileview_container .about,
-  .chatprofileview_container .media,
-  .chatprofileview_container .starred,
-  .chatprofileview_container .notification,
-  .chatprofileview_container .block_report,
-  .chatprofileview_container .delete {
-    width: 390px;
-  }
-  .chatprofileview_container img {
-    left: 50px;
-  }
-  .chatprofileview_container #name {
-    left: 150px;
-  }
-  .media img {
-    height: 80px;
-    width: 80px;
-    left: 30px;
-  }
-  .expanded_sidebar {
-    height: 100vh;
-  }
-  .webcam,
-  .sendImageBackground {
-    width: 98vw;
-  }
-}
-
-/* 800 to 1200  */
-
-@media all and (min-width: 800px) and (max-width: 1199px) {
-  body {
-    overflow-y: hidden;
-  }
-  .chatlist-container,
-  .profilebar-container,
-  .allchats {
-    width: 40vw;
-  }
-  .allchats {
-    height: 85vh;
-  }
-  .chatlist-container .searchBox {
-    width: 350px;
-  }
-  .chatlist-container .searchBox input {
-    width: 325px;
-  }
-  .singlechat_container .name #time {
-    left: 25vw;
-  }
-  .MainChat-container {
-    width: 100vw;
-    margin-left: 40vw;
-    height: 100vh;
-  }
-  .MainChat-container .logo {
-    left: 20vw;
-  }
-  .MainChat-container p,
-  .MainChat-container .quote #line1,
-  .MainChat-container .quote #line2 {
-    left: 15px;
-  }
-  .MainChat-container #clone {
-    left: 300px;
-  }
-
-  /* active chat  */
-  .ActiveProfile-container,
-  .ActiveProfile-container2 {
-    width: 60vw;
-    margin-left: 40vw;
-    height: 100vh;
-  }
-  .ActiveProfile-container .activeProfile-Navbar,
-  .ActiveProfile-container2 .activeProfile-Navbar2 {
-    width: 60vw;
-  }
-  .activeProfile-Navbar .name,
-  .activeProfile-Navbar .name #name,
-  .activeProfile-Navbar .name #online,
-  .activeProfile-Navbar2 .name,
-  .activeProfile-Navbar2 .name #name,
-  .activeProfile-Navbar2 .name #online {
-    width: 280px;
-  }
-  .activeProfile-Navbar #search {
-    left: 45vw;
-  }
-  .activeProfile-Navbar .settings {
-    left: 50vw;
-  }
-
-  /* messagebar  */
-  .messagebar-container,
-  .messagebar-container2 {
-    width: 60vw;
-    top: 83vh;
-  }
-  .messagebar-container .file,
-  .messagebar-container2 .file {
-    left: 60px;
-  }
-  .messagebar-container #message,
-  .messagebar-container2 #message2 {
-    width: 35vw;
-    left: 100px;
-  }
-  .messagebar-container .send,
-  .messagebar-container2 .send2 {
-    left: 55vw;
-  }
-  .messagebar-container .emoji {
-    top: -330px;
-    left: 0;
-  }
-
-  /* messages  */
-  .message_container,
-  .message_container2 {
-    width: 60vw;
-    top: -120px;
-    left: 0px;
-    height: 690px;
-  }
-
-  /* status page  */
-  .status_sidebar {
-    height: 100vh;
-  }
-  .allstatus {
-    height: 100vh;
-  }
-  .status_Mainbar {
-    height: 100vh;
-  }
-
-  /* for chat profile view  */
-  .activeProfile-Navbar2 #search2,
-  .activeProfile-Navbar2 .settings2 {
-    top: -120px;
-    left: 290px;
-  }
-
-  .chatprofileview_container {
-    left: 0;
-    width: 60vw;
-    z-index: 55;
-  }
-  .chatprofileview_container .navbar {
-    width: 60vw;
-  }
-  .chatprofileview_container .image,
-  .chatprofileview_container .about,
-  .chatprofileview_container .media,
-  .chatprofileview_container .starred,
-  .chatprofileview_container .notification,
-  .chatprofileview_container .block_report,
-  .chatprofileview_container .delete {
-    width: 60vw;
-  }
-  .chatprofileview_container img {
-    left: 15vw;
-  }
-  .chatprofileview_container #name {
-    left: 22vw;
-  }
-  .media img {
-    height: 80px;
-    width: 80px;
-    left: 30px;
-  }
-  .expanded_sidebar {
-    height: 100vh;
-  }
-  .webcam,
-  .sendImageBackground {
-    width: 98vw;
-  }
-}
-
-@media all and (min-width: 1200px) and (max-width: 1600px) {
-  body {
-    overflow-y: hidden;
-  }
-  .chatlist-container,
-  .profilebar-container,
-  .allchats {
-    width: 30vw;
-  }
-  .allchats {
-    height: 85vh;
-  }
-  .chatlist-container .searchBox {
-    width: 27vw;
-  }
-  .chatlist-container .searchBox input {
-    width: 20vw;
-  }
-  .singlechat_container .name #time {
-    left: 20vw;
-  }
-  .MainChat-container {
-    width: 100vw;
-    margin-left: 30vw;
-    height: 100vh;
-  }
-  .MainChat-container .logo {
-    left: 20vw;
-  }
-  .MainChat-container p,
-  .MainChat-container .quote #line1,
-  .MainChat-container .quote #line2 {
-    left: 15px;
-  }
-  .MainChat-container #clone {
-    left: 300px;
-  }
-
-  /* active chat  */
-  .ActiveProfile-container
-  /* .ActiveProfile-container2  */ {
-    width: 70vw;
-    margin-left: 30vw;
-    height: 100vh;
-  }
-  .ActiveProfile-container2 {
-    margin-left: 30vw;
-    height: 100vh;
-  }
-  .ActiveProfile-container .activeProfile-Navbar,
-  .ActiveProfile-container2 .activeProfile-Navbar2 {
-    width: 70vw;
-  }
-
-  .activeProfile-Navbar .name,
-  .activeProfile-Navbar .name #name,
-  .activeProfile-Navbar .name #online
-  /* .activeProfile-Navbar2 .name,
-  .activeProfile-Navbar2 .name #name,
-  .activeProfile-Navbar2 .name #online  */ {
-    width: 280px;
-  }
-  .activeProfile-Navbar #search {
-    left: 60vw;
-  }
-  .activeProfile-Navbar .settings {
-    left: 65vw;
-  }
-
-  /* messagebar  */
-  .messagebar-container2,
-  .messagebar-container {
-    width: 70vw;
-    top: 83vh;
-  }
-  .messagebar-container .file
-  /* .messagebar-container2 .file  */ {
-    left: 60px;
-  }
-  .messagebar-container #message {
-    width: 55vw;
-    left: 100px;
-  }
-  .messagebar-container2 #message2 {
-    width: 25vw;
-    left: 120px;
-  }
-  .messagebar-container2 #message2,
-  .messagebar-container .send {
-    left: 65vw;
-  }
-  .messagebar-container2 .send2 {
-    left: 36vw;
-  }
-  .messagebar-container .emoji {
-    top: -330px;
-    left: 0;
-  }
-
-  /* messages  */
-  .message_container
-  /* .message_container2  */ {
-    width: 70vw;
-    top: -120px;
-    left: 0px;
-    height: 690px;
-  }
-
-  /* status page  */
-  .status_sidebar {
-    height: 100vh;
-  }
-  .allstatus {
-    height: 100vh;
-  }
-  .status_Mainbar {
-    height: 100vh;
-  }
-
-  /* for chat profile view  */
-  .activeProfile-Navbar2 #search2 {
-    top: -125px;
-    left: 30vw;
-  }
-  .activeProfile-Navbar2 .settings2 {
-    top: -125px;
-    left: 33vw;
-  }
-
-  .chatprofileview_container {
-    left: 40vw;
-    width: 30vw;
-    z-index: 55;
-  }
-  .chatprofileview_container .navbar {
-    width: 30vw;
-  }
-  .chatprofileview_container .image,
-  .chatprofileview_container .about,
-  .chatprofileview_container .media,
-  .chatprofileview_container .starred,
-  .chatprofileview_container .notification,
-  .chatprofileview_container .block_report,
-  .chatprofileview_container .delete {
-    width: 30vw;
-  }
-  .chatprofileview_container img {
-    left: 50px;
-  }
-  .chatprofileview_container #name {
-    left: 150px;
-  }
-  .media img {
-    height: 80px;
-    width: 80px;
-    left: 30px;
-  }
-  .expanded_sidebar {
-    height: 100vh;
-  }
-  .webcam,
-  .sendImageBackground {
-    width: 98vw;
-  }
-}
-
-/* Media query for height  */
-
-@media all and (min-height: 250px) and (max-height: 550px) {
-  .MainChat-container,
-  .allchats,
-  .ActiveProfile-container,
-  .ActiveProfile-container2 {
-    height: 100vh;
-  }
-  .messagebar-container,
-  .messagebar-container2 {
-    top: 60vh;
-  }
-  .message_container,
-  .message_container2 {
-    top: -500px;
-  }
-}
-@media all and (min-height: 550px) and (max-height: 749px) {
-  .MainChat-container,
-  .allchats,
-  .ActiveProfile-container,
-  .ActiveProfile-container2 {
-    height: 100vh;
-  }
-  .messagebar-container,
-  .messagebar-container2 {
-    top: 80vh;
-  }
-  .message_container,
-  .message_container2 {
-    top: -300px;
-  }
-}
-@media all and (min-height: 750px) and (max-height: 870px) and (min-width: 0px) and (max-width: 399px) {
-  html,
-  body {
-    overflow-y: hidden;
-  }
-  .MainChat-container {
-    height: 100vh;
-  }
-  .chatlist-container,
-  .allchats {
-    height: 75vh;
-  }
-  .ActiveProfile-container,
-  .ActiveProfile-container2 {
-    height: 85vh;
-  }
-  .messagebar-container,
-  .messagebar-container2 {
-    top: 66vh;
-  }
-  .messagebar-container2 {
-    width: 45vh;
-  }
-  .message_container,
-  .message_container2 {
-    top: -230px;
-  }
 }

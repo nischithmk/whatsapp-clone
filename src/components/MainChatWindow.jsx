@@ -1,4 +1,4 @@
-import React, { Component, useContext, useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import users from "../data.js";
@@ -10,6 +10,7 @@ function MainChatWindow() {
   const { PrfileID } = useParams();
   const [isprofileClicked, setisprofileClicked] = useState(false);
 
+  // when no user is slected whatsapp logo is shown on right side
   const IschatActive = () => {
     return (
       <div
@@ -18,10 +19,6 @@ function MainChatWindow() {
             ? "ActiveProfile-container2"
             : "ActiveProfile-container"
         }
-        // style={{
-        //   width: isprofileClicked ? "50%" : "100%",
-        //   transition: "  1s",
-        // }}
       >
         <Helmet>
           <meta
@@ -42,10 +39,6 @@ function MainChatWindow() {
                     : "activeProfile-Navbar"
                 }
                 onClick={() => setisprofileClicked(!isprofileClicked)}
-                // style={{
-                //   width: isprofileClicked ? "610px" : "100%",
-                //   transition: "  1s",
-                // }}
               >
                 <img src={user.avatar_url} alt="profilepic" />
                 <div className="name">
@@ -56,21 +49,12 @@ function MainChatWindow() {
                   <AiOutlineSearch
                     size={28}
                     id={isprofileClicked ? "search2" : "search"}
-                    // style={{
-                    //   left: isprofileClicked ? "450px" : "60vw",
-                    //   transition: "  1s",
-                    // }}
                   />
                   <svg
                     viewBox="0 0 24 24"
                     width="30"
                     height="30"
                     className={isprofileClicked ? "settings2" : "settings"}
-                    // style={{
-                    //   left: isprofileClicked ? "490px" : "65vw",
-                    //   top: "-20px",
-                    //   transition: "  1s",
-                    // }}
                   >
                     <path
                       fill="currentColor"
@@ -93,6 +77,7 @@ function MainChatWindow() {
     );
   };
 
+  // when a user is slected from left side recent chat this contanier is renderd
   const IsChatinACtive = () => {
     return (
       <div className="MainChat-container">

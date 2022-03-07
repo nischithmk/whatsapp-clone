@@ -1,16 +1,18 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Messages from "./messages";
 import chats from "../chats";
 import { useParams } from "react-router-dom";
 import { IoSendSharp } from "react-icons/io5";
 import { RiAttachment2 } from "react-icons/ri";
 import Picker from "emoji-picker-react";
-import { BsEmojiSmile, BsSlack } from "react-icons/bs";
+import { BsEmojiSmile } from "react-icons/bs";
 import Webcam from "react-webcam";
 import users from "../data";
 import { Helmet } from "react-helmet";
 
+// container for message input
 function MessageBar({ isprofileClicked }) {
+  // converting sent/recieved message timings to am/pm
   function formatAMPM(date) {
     var hours = date.getHours();
     var minutes = date.getMinutes();
@@ -69,7 +71,6 @@ function MessageBar({ isprofileClicked }) {
   };
 
   const [file, setFile] = useState(null);
-
   const handleInput = (e) => {
     e.preventDefault();
     setFile(e.target.files[0]);
@@ -112,19 +113,7 @@ function MessageBar({ isprofileClicked }) {
     handleCameraSend(imageSrc);
   }, [webcamRef, setImgSrc]);
 
-  // const stopVideo = () => {
-  //   navigator.mediaDevices
-  //     .getUserMedia({ video: true })
-  //     .then(function (stream) {
-  //       stream.getVideoTracks().forEach(function (track) {
-  //         if (track.readyState == "live" && track.kind == "video") {
-  //           track.stop();
-  //         }
-  //       });
-  //     });
-  // };
   const handleCameraSend = (imageSrc) => {
-    // e.preventDefault();
     const newMessage = {
       filename: imageSrc,
       time: formatAMPM(new Date()),
@@ -171,10 +160,6 @@ function MessageBar({ isprofileClicked }) {
         className={
           isprofileClicked ? "messagebar-container2" : "messagebar-container"
         }
-        // style={{
-        //   width: isprofileClicked ? "610px" : "100vw",
-        //   transition: "  1s",
-        // }}
       >
         <Helmet>
           <meta
@@ -341,11 +326,6 @@ function MessageBar({ isprofileClicked }) {
             value={message}
             onChange={handleChange}
             autoComplete="off"
-            // style={{
-            //   width: isprofileClicked ? "360px" : "50vw",
-            //   left: "115px",
-            //   transition: "  1s",
-            // }}
           />
           <RiAttachment2
             size={35}
@@ -366,10 +346,6 @@ function MessageBar({ isprofileClicked }) {
             className={isprofileClicked ? "send2" : "send"}
             onClick={handleSubmit}
             size={38}
-            // style={{
-            //   left: isprofileClicked ? "550px" : "65vw",
-            //   transition: "  1s",
-            // }}
           />
         </form>
       </div>
@@ -378,10 +354,6 @@ function MessageBar({ isprofileClicked }) {
         className={
           isprofileClicked ? "message_container2" : "message_container"
         }
-        // style={{
-        //   width: isprofileClicked ? "558px" : "1028px",
-        //   transition: "  1s",
-        // }}
       >
         <Messages isprofileClicked={isprofileClicked} />
       </div>

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import chats from "../chats.js";
 import { useParams } from "react-router-dom";
 import { BsCheck2All } from "react-icons/bs";
 import { Helmet } from "react-helmet";
 
-function Messages({ isprofileClicked }) {
+// sent/ recieved messages container
+function Messages() {
   const { PrfileID } = useParams();
   return (
     <>
@@ -92,6 +93,7 @@ function Messages({ isprofileClicked }) {
           }
         })}
 
+      {/* container for sent message  */}
       <div className="rightleft_message_containter">
         <div className="rightside_message" key="164432">
           <div className="align-right message">
@@ -108,6 +110,7 @@ function Messages({ isprofileClicked }) {
           </div>
         </div>
 
+        {/* container for recieved message  */}
         <div className="leftside_message" key="1644323">
           <div className="align-left message">
             <div className="triangle triangle-left"></div>

@@ -1,8 +1,9 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import profilePic from "../images/profile.jpeg";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
+// left side container top profile bar
 function ProfileBar(props) {
   let navigate = useNavigate();
   const [isSettingsOpen, setSettingsOpen] = useState(false);

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import data from "../data.js";
 import { useParams } from "react-router-dom";
 import { ImCross } from "react-icons/im";

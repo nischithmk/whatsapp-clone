@@ -1,11 +1,10 @@
-import React, { Component } from "react";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import React from "react";
 import { HiArrowNarrowLeft } from "react-icons/hi";
 import profilePic from "../images/profile.jpeg";
 import { Helmet } from "react-helmet";
 
+// owner profile dispaly container
 const OwnerProfileSideBar = (props) => {
-  console.log(props.sidebar);
   return (
     <div className="expanded_sidebar">
       <Helmet>

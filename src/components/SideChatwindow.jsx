@@ -8,6 +8,7 @@ import {
   OwnerProfileCloisngSideBar,
 } from "./OwnerProfile";
 
+// side chat window
 function SideChatWindow() {
   let [sidebar, showsidebar] = useState(null);
 
