@@ -16,6 +16,7 @@ import m2 from "../images/media2.jpg";
 import m3 from "../images/media3.jpg";
 import m4 from "../images/media4.jpg";
 
+//  user profile view when clicked on user image
 function ChatProfileView({ isprofileClicked, setisprofileClicked }) {
   const { PrfileID } = useParams();
   var user = data[PrfileID - 1];

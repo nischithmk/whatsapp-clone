@@ -1231,6 +1231,32 @@ body {
   border-radius: 10%;
 }
 
+.status_Mainbar .left_arrow {
+  position: relative;
+  top: 370px;
+  left: 290px;
+  z-index: 5;
+}
+.left_arrow:hover {
+  color: #6c9aad;
+  cursor: pointer;
+
+  box-shadow: rgba(177, 223, 14, 0.911) 0px 30px 60px -12px,
+    rgb(243, 4, 4) 0px 18px 36px -18px;
+}
+.status_Mainbar .right_arrow {
+  position: relative;
+  top: 370px;
+  left: 760px;
+  z-index: 5;
+}
+.right_arrow:hover {
+  color: #6c9aad;
+  cursor: pointer;
+  box-shadow: rgba(177, 223, 14, 0.911) 0px 30px 60px -12px,
+    rgb(243, 4, 4) 0px 18px 36px -18px;
+}
+
 /* status page right side container */
 .dummy {
   position: absolute;

@@ -466,7 +466,7 @@
   }
   .webcam,
   .sendImageBackground {
-    width: 98vw;
+    width: 60vw;
   }
 }
 
@@ -628,7 +628,7 @@
   }
   .webcam,
   .sendImageBackground {
-    width: 98vw;
+    width: 70vw;
   }
 }
 
@@ -671,7 +671,7 @@
 }
 
 /* media query targetd for full screen*/
-@media all and (min-height: 750px) and (max-height: 1000px) and (min-width: 0px) and (max-width: 400px) {
+@media all and (min-height: 750px) and (max-height: 1000px) and (min-width: 0px) and (max-width: 450px) {
   html,
   body {
     overflow-y: hidden;
@@ -681,21 +681,24 @@
   }
   .chatlist-container,
   .allchats {
-    height: 75vh;
+    height: 100vh;
   }
   .ActiveProfile-container,
   .ActiveProfile-container2 {
-    height: 85vh;
+    height: 100vh;
   }
   .messagebar-container,
   .messagebar-container2 {
-    top: 66vh;
+    top: 84vh;
   }
   .messagebar-container2 {
     width: 45vh;
   }
   .message_container,
   .message_container2 {
-    top: -230px;
+    top: -10vh;
+  }
+  .fileUploaded {
+    width: 100vw;
   }
 }
